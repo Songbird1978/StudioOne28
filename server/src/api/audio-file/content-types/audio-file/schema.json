@@ -1,0 +1,58 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audio_files",
+  "info": {
+    "singularName": "audio-file",
+    "pluralName": "audio-files",
+    "displayName": "AudioFile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "songTitle": {
+      "type": "string"
+    },
+    "composer": {
+      "type": "string"
+    },
+    "year": {
+      "type": "biginteger"
+    },
+    "audioFile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "artwork": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "mixing",
+        "mastering",
+        "performance",
+        "studio recording",
+        "production",
+        "live recording "
+      ]
+    },
+    "linkURL": {
+      "type": "string"
+    }
+  }
+}
