@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_media_audio_player_repeatables",
+  "info": {
+    "displayName": "audioPlayerRepeatable"
+  },
+  "options": {},
+  "attributes": {
+    "audioPlayer": {
+      "type": "component",
+      "component": "media.audio-player",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

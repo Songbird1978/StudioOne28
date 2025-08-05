@@ -30,23 +30,53 @@
     "linkURL": {
       "type": "string"
     },
-    "th1": {
-      "type": "string"
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     },
-    "th2": {
-      "type": "string"
+    "subMenuCategory": {
+      "type": "enumeration",
+      "enum": [
+        "studio",
+        "musician",
+        "listen",
+        "gallery",
+        "contact",
+        "consult"
+      ]
     },
-    "tr1": {
-      "type": "string"
+    "pageLayout": {
+      "type": "enumeration",
+      "enum": [
+        "infoLayout",
+        "galleryOverviewLayout",
+        "galleryDetailLayout",
+        "audioOverviewLayout",
+        "audioDetailLayout"
+      ]
     },
-    "tr2": {
-      "type": "string"
+    "showInNav": {
+      "type": "boolean"
     },
-    "tr3": {
-      "type": "string"
+    "order": {
+      "type": "integer"
     },
-    "tr4": {
-      "type": "string"
+    "contentBlocks": {
+      "type": "dynamiczone",
+      "components": [
+        "elements.table",
+        "navigation.related-content",
+        "elements.repeatable-para",
+        "navigation.repeatable-button",
+        "media.audio-player-repeatable",
+        "media.gallery-preview-repeatable"
+      ]
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "mappedBy": "pages"
     }
   }
 }

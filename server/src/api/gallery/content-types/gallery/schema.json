@@ -11,7 +11,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "liveDrummer": {
+    "gallery": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
@@ -21,65 +21,29 @@
         "audios"
       ]
     },
-    "studioDrummer": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
+    "galleryName": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "galleryName"
+    },
+    "GalleryCategory": {
+      "type": "enumeration",
+      "enum": [
+        "Live Drums",
+        "Studio Drums",
+        "Discography",
+        "Studio One28",
+        "Equipment",
+        "Facilities"
       ]
     },
-    "localArea": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "studioOne28": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "clientArtwork": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "facilities": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "equipment": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::category.category",
+      "mappedBy": "gallery"
     }
   }
 }

@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_media_gallery_preview_repeatables",
+  "info": {
+    "displayName": "galleryPreviewRepeatable"
+  },
+  "options": {},
+  "attributes": {
+    "galleryPreview": {
+      "type": "component",
+      "component": "media.gallery-preview",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

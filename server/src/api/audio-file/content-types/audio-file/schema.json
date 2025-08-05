@@ -40,7 +40,7 @@
         "audios"
       ]
     },
-    "category": {
+    "AudioCategory": {
       "type": "enumeration",
       "enum": [
         "mixing",
@@ -48,11 +48,22 @@
         "performance",
         "studio recording",
         "production",
-        "live recording "
+        "live recording ",
+        "Passion Projects"
       ]
     },
     "linkURL": {
       "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "composer"
+    },
+    "categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::category.category",
+      "inversedBy": "audio_files"
     }
   }
 }

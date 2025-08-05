@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_repeatable_paras",
+  "info": {
+    "displayName": "repeatablePara"
+  },
+  "options": {},
+  "attributes": {
+    "paragraph": {
+      "type": "component",
+      "component": "elements.paragraph",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

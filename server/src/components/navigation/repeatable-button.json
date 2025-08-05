@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_navigation_repeatable_buttons",
+  "info": {
+    "displayName": "repeatableButton"
+  },
+  "options": {},
+  "attributes": {
+    "repeatableButton": {
+      "type": "component",
+      "component": "navigation.button",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

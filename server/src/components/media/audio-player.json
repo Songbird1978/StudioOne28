@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_media_audio_players",
+  "info": {
+    "displayName": "audioPlayer"
+  },
+  "options": {},
+  "attributes": {
+    "audio_file": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::audio-file.audio-file"
+    },
+    "titleOverRide": {
+      "type": "string"
+    },
+    "showArtwork": {
+      "type": "boolean"
+    },
+    "playerStyle": {
+      "type": "enumeration",
+      "enum": [
+        "compact",
+        "full ",
+        "minimal"
+      ]
+    },
+    "customCaption": {
+      "type": "blocks"
+    },
+    "autoPlay": {
+      "type": "boolean"
+    }
+  },
+  "config": {}
+}

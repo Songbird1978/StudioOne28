@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_navigation_related_contents",
+  "info": {
+    "displayName": "relatedContent"
+  },
+  "options": {},
+  "attributes": {
+    "pages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::page.page"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

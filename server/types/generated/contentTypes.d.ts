@@ -422,8 +422,7 @@ export interface ApiAudioFileAudioFile extends Struct.CollectionTypeSchema {
   };
   attributes: {
     artwork: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    audioFile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    category: Schema.Attribute.Enumeration<
+    AudioCategory: Schema.Attribute.Enumeration<
       [
         'mixing',
         'mastering',
@@ -431,7 +430,13 @@ export interface ApiAudioFileAudioFile extends Struct.CollectionTypeSchema {
         'studio recording',
         'production',
         'live recording ',
+        'Passion Projects',
       ]
+    >;
+    audioFile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
     >;
     composer: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
@@ -445,6 +450,7 @@ export interface ApiAudioFileAudioFile extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'composer'>;
     songTitle: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -453,33 +459,39 @@ export interface ApiAudioFileAudioFile extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiClientClient extends Struct.CollectionTypeSchema {
-  collectionName: 'clients';
+export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
+  collectionName: 'categories';
   info: {
-    displayName: 'client';
-    pluralName: 'clients';
-    singularName: 'client';
+    displayName: 'category';
+    pluralName: 'categories';
+    singularName: 'category';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    artwork: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    audioFile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    composer: Schema.Attribute.String;
+    audio_files: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::audio-file.audio-file'
+    >;
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    linkURL: Schema.Attribute.String;
+    gallery: Schema.Attribute.Relation<'manyToOne', 'api::gallery.gallery'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::client.client'
+      'api::category.category'
     > &
       Schema.Attribute.Private;
-    names: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    pages: Schema.Attribute.Relation<'manyToMany', 'api::page.page'>;
     publishedAt: Schema.Attribute.DateTime;
-    songTitle: Schema.Attribute.String;
+    slug: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -497,29 +509,28 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    clientArtwork: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    categories: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::category.category'
     >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    equipment: Schema.Attribute.Media<
+    gallery: Schema.Attribute.Media<
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    facilities: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
+    GalleryCategory: Schema.Attribute.Enumeration<
+      [
+        'Live Drums',
+        'Studio Drums',
+        'Discography',
+        'Studio One28',
+        'Equipment',
+        'Facilities',
+      ]
     >;
-    liveDrummer: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    localArea: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    galleryName: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -527,14 +538,7 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    studioDrummer: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
-    studioOne28: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    slug: Schema.Attribute.UID<'galleryName'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -561,6 +565,7 @@ export interface ApiLinkLink extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.UID<'name'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -578,6 +583,20 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    categories: Schema.Attribute.Relation<
+      'manyToMany',
+      'api::category.category'
+    >;
+    contentBlocks: Schema.Attribute.DynamicZone<
+      [
+        'elements.table',
+        'navigation.related-content',
+        'elements.repeatable-para',
+        'navigation.repeatable-button',
+        'media.audio-player-repeatable',
+        'media.gallery-preview-repeatable',
+      ]
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -587,38 +606,23 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'> &
       Schema.Attribute.Private;
+    order: Schema.Attribute.Integer;
+    pageLayout: Schema.Attribute.Enumeration<
+      [
+        'infoLayout',
+        'galleryOverviewLayout',
+        'galleryDetailLayout',
+        'audioOverviewLayout',
+        'audioDetailLayout',
+      ]
+    >;
     publishedAt: Schema.Attribute.DateTime;
-    th1: Schema.Attribute.String;
-    th2: Schema.Attribute.String;
+    showInNav: Schema.Attribute.Boolean;
+    slug: Schema.Attribute.UID<'title'>;
+    subMenuCategory: Schema.Attribute.Enumeration<
+      ['studio', 'musician', 'listen', 'gallery', 'contact', 'consult']
+    >;
     title: Schema.Attribute.String;
-    tr1: Schema.Attribute.String;
-    tr2: Schema.Attribute.String;
-    tr3: Schema.Attribute.String;
-    tr4: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiTableTable extends Struct.SingleTypeSchema {
-  collectionName: 'tables';
-  info: {
-    displayName: 'table';
-    pluralName: 'tables';
-    singularName: 'table';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<'oneToMany', 'api::table.table'> &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1136,11 +1140,10 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::audio-file.audio-file': ApiAudioFileAudioFile;
-      'api::client.client': ApiClientClient;
+      'api::category.category': ApiCategoryCategory;
       'api::gallery.gallery': ApiGalleryGallery;
       'api::link.link': ApiLinkLink;
       'api::page.page': ApiPagePage;
-      'api::table.table': ApiTableTable;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

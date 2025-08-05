@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_media_gallery_previews",
+  "info": {
+    "displayName": "galleryPreview"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "gallery": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::gallery.gallery"
+    },
+    "caption": {
+      "type": "blocks"
+    },
+    "galleryUrl": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

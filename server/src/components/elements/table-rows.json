@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_elements_table_rows",
+  "info": {
+    "displayName": "tableRows"
+  },
+  "options": {},
+  "attributes": {
+    "tableDataCell": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
