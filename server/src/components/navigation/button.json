@@ -4,13 +4,6 @@
     "displayName": "button"
   },
   "options": {},
-  "attributes": {
-    "name": {
-      "type": "string"
-    },
-    "buttonUrl": {
-      "type": "string"
-    }
-  },
+  "attributes": {},
   "config": {}
 }

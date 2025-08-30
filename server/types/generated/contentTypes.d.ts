@@ -422,21 +422,37 @@ export interface ApiAudioFileAudioFile extends Struct.CollectionTypeSchema {
   };
   attributes: {
     artwork: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    AudioCategory: Schema.Attribute.Enumeration<
-      [
-        'mixing',
-        'mastering',
-        'performance',
-        'studio recording',
-        'production',
-        'live recording ',
-        'Passion Projects',
-      ]
-    >;
     audioFile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
+    >;
+    categoryOne: Schema.Attribute.Enumeration<
+      [
+        'mixing-listen',
+        'mastering-listen',
+        'studio-recordings',
+        'location-recording',
+        'personal-projects',
+      ]
+    >;
+    categoryThree: Schema.Attribute.Enumeration<
+      [
+        'mixing-listen',
+        'mastering-listen',
+        'studio-recordings',
+        'location-recording',
+        'personal-projects',
+      ]
+    >;
+    categoryTwo: Schema.Attribute.Enumeration<
+      [
+        'mixing-listen',
+        'mastering-listen',
+        'studio-recordings',
+        'location-recording',
+        'personal-projects',
+      ]
     >;
     composer: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
@@ -474,14 +490,9 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       'manyToMany',
       'api::audio-file.audio-file'
     >;
-    categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    gallery: Schema.Attribute.Relation<'manyToOne', 'api::gallery.gallery'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -509,10 +520,6 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    categories: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::category.category'
-    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -520,14 +527,14 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
-    GalleryCategory: Schema.Attribute.Enumeration<
+    galleryCategory: Schema.Attribute.Enumeration<
       [
-        'Live Drums',
-        'Studio Drums',
-        'Discography',
-        'Studio One28',
-        'Equipment',
-        'Facilities',
+        'live-drums-gallery',
+        'studio-drums-gallery',
+        'discography',
+        'studio-one28',
+        'equipment',
+        'local-area',
       ]
     >;
     galleryName: Schema.Attribute.String;
@@ -538,7 +545,7 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID<'galleryName'>;
+    slug: Schema.Attribute.UID<'galleryCategory'>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -583,6 +590,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    bgcolor: Schema.Attribute.String;
     categories: Schema.Attribute.Relation<
       'manyToMany',
       'api::category.category'
@@ -614,15 +622,61 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'galleryDetailLayout',
         'audioOverviewLayout',
         'audioDetailLayout',
+        'clientLayout',
+        'reviewLayout',
       ]
     >;
     publishedAt: Schema.Attribute.DateTime;
     showInNav: Schema.Attribute.Boolean;
     slug: Schema.Attribute.UID<'title'>;
     subMenuCategory: Schema.Attribute.Enumeration<
-      ['studio', 'musician', 'listen', 'gallery', 'contact', 'consult']
+      [
+        'studio',
+        'musician',
+        'listen',
+        'gallery',
+        'contact',
+        'consult',
+        'clients',
+      ]
     >;
     title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiReviewReview extends Struct.CollectionTypeSchema {
+  collectionName: 'reviews';
+  info: {
+    displayName: 'review';
+    pluralName: 'reviews';
+    singularName: 'review';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    backgroundImg: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    comment: Schema.Attribute.Text;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    fullName: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    includeInReviews: Schema.Attribute.Boolean;
+    links: Schema.Attribute.DynamicZone<['navigation.repeatable-button']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::review.review'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Strapline: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1144,6 +1198,7 @@ declare module '@strapi/strapi' {
       'api::gallery.gallery': ApiGalleryGallery;
       'api::link.link': ApiLinkLink;
       'api::page.page': ApiPagePage;
+      'api::review.review': ApiReviewReview;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

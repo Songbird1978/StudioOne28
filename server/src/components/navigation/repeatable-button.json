@@ -5,10 +5,11 @@
   },
   "options": {},
   "attributes": {
-    "repeatableButton": {
-      "type": "component",
-      "component": "navigation.button",
-      "repeatable": true
+    "linkURL": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
     }
   },
   "config": {}

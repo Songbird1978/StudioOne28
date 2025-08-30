@@ -86,12 +86,9 @@ export interface MediaGalleryPreview extends Struct.ComponentSchema {
   };
   attributes: {
     caption: Schema.Attribute.Blocks;
-    gallery: Schema.Attribute.Relation<'oneToOne', 'api::gallery.gallery'>;
     galleryUrl: Schema.Attribute.String;
-    images: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -110,10 +107,7 @@ export interface NavigationButton extends Struct.ComponentSchema {
   info: {
     displayName: 'button';
   };
-  attributes: {
-    buttonUrl: Schema.Attribute.String;
-    name: Schema.Attribute.String;
-  };
+  attributes: {};
 }
 
 export interface NavigationRelatedContent extends Struct.ComponentSchema {
@@ -122,6 +116,10 @@ export interface NavigationRelatedContent extends Struct.ComponentSchema {
     displayName: 'relatedContent';
   };
   attributes: {
+    audio_files: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::audio-file.audio-file'
+    >;
     name: Schema.Attribute.String;
     pages: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
   };
@@ -133,7 +131,8 @@ export interface NavigationRepeatableButton extends Struct.ComponentSchema {
     displayName: 'repeatableButton';
   };
   attributes: {
-    repeatableButton: Schema.Attribute.Component<'navigation.button', true>;
+    linkURL: Schema.Attribute.String;
+    name: Schema.Attribute.String;
   };
 }
 

@@ -40,18 +40,6 @@
         "audios"
       ]
     },
-    "AudioCategory": {
-      "type": "enumeration",
-      "enum": [
-        "mixing",
-        "mastering",
-        "performance",
-        "studio recording",
-        "production",
-        "live recording ",
-        "Passion Projects"
-      ]
-    },
     "linkURL": {
       "type": "string"
     },
@@ -64,6 +52,36 @@
       "relation": "manyToMany",
       "target": "api::category.category",
       "inversedBy": "audio_files"
+    },
+    "categoryOne": {
+      "type": "enumeration",
+      "enum": [
+        "mixing-listen",
+        "mastering-listen",
+        "studio-recordings",
+        "location-recording",
+        "personal-projects"
+      ]
+    },
+    "categoryTwo": {
+      "type": "enumeration",
+      "enum": [
+        "mixing-listen",
+        "mastering-listen",
+        "studio-recordings",
+        "location-recording",
+        "personal-projects"
+      ]
+    },
+    "categoryThree": {
+      "type": "enumeration",
+      "enum": [
+        "mixing-listen",
+        "mastering-listen",
+        "studio-recordings",
+        "location-recording",
+        "personal-projects"
+      ]
     }
   }
 }

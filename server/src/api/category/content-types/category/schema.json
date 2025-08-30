@@ -14,27 +14,16 @@
     "name": {
       "type": "string"
     },
-    "pages": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::page.page",
-      "inversedBy": "categories"
-    },
     "audio_files": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::audio-file.audio-file",
       "mappedBy": "categories"
     },
-    "categories": {
+    "pages": {
       "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category"
-    },
-    "gallery": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::gallery.gallery",
+      "relation": "manyToMany",
+      "target": "api::page.page",
       "inversedBy": "categories"
     },
     "slug": {

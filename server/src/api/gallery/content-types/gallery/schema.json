@@ -26,24 +26,18 @@
     },
     "slug": {
       "type": "uid",
-      "targetField": "galleryName"
+      "targetField": "galleryCategory"
     },
-    "GalleryCategory": {
+    "galleryCategory": {
       "type": "enumeration",
       "enum": [
-        "Live Drums",
-        "Studio Drums",
-        "Discography",
-        "Studio One28",
-        "Equipment",
-        "Facilities"
+        "live-drums-gallery",
+        "studio-drums-gallery",
+        "discography",
+        "studio-one28",
+        "equipment",
+        "local-area"
       ]
-    },
-    "categories": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::category.category",
-      "mappedBy": "gallery"
     }
   }
 }

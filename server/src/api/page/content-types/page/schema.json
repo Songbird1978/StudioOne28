@@ -36,13 +36,24 @@
     },
     "subMenuCategory": {
       "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "showInNav"
+            },
+            true
+          ]
+        }
+      },
       "enum": [
         "studio",
         "musician",
         "listen",
         "gallery",
         "contact",
-        "consult"
+        "consult",
+        "clients"
       ]
     },
     "pageLayout": {
@@ -52,7 +63,9 @@
         "galleryOverviewLayout",
         "galleryDetailLayout",
         "audioOverviewLayout",
-        "audioDetailLayout"
+        "audioDetailLayout",
+        "clientLayout",
+        "reviewLayout"
       ]
     },
     "showInNav": {
@@ -71,6 +84,9 @@
         "media.audio-player-repeatable",
         "media.gallery-preview-repeatable"
       ]
+    },
+    "bgcolor": {
+      "type": "string"
     },
     "categories": {
       "type": "relation",

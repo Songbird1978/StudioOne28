@@ -5,9 +5,9 @@
   },
   "options": {},
   "attributes": {
-    "images": {
+    "image": {
       "type": "media",
-      "multiple": true,
+      "multiple": false,
       "allowedTypes": [
         "images",
         "files",
@@ -15,15 +15,13 @@
         "audios"
       ]
     },
-    "gallery": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::gallery.gallery"
-    },
     "caption": {
       "type": "blocks"
     },
     "galleryUrl": {
+      "type": "string"
+    },
+    "title": {
       "type": "string"
     }
   },

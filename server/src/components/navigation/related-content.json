@@ -12,6 +12,11 @@
     },
     "name": {
       "type": "string"
+    },
+    "audio_files": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::audio-file.audio-file"
     }
   },
   "config": {}
