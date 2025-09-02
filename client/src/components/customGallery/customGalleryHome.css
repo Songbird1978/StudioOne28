@@ -1,0 +1,123 @@
+.galleryHomeContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 15vh -10vh);
+}
+
+.galleryHomeContainer::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--imageUrl);
+    background-blend-mode: soft-light;
+    background-color: var(--velvet-mistake);
+    background-size: auto 100%;
+    background-repeat: repeat-x;
+    z-index: 0;
+}
+.slick-slider {
+    display: flex !important ;
+    position: relative;
+    justify-content: center;
+    height: 54vh;
+    width: 100%;
+    min-width: 1px;
+    z-index: 2;
+}
+
+.slick-list {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+    width: auto;
+    padding: 0 50px !important;
+    z-index: 2;
+}
+
+.slick-track {
+    position: relative;
+    display: flex !important;
+    height: 100%;
+    width: auto;
+    z-index: 3;
+}
+
+.home-slider {
+    width: 100% !important;
+    min-width: 1px;
+}
+.slick-slide {
+    width: 100% !important;
+}
+
+.home-slide {
+    position: relative;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: auto;
+    z-index: 1003;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.home-img {
+    position: relative;
+    height: 54vh;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.image-gallery-icon,
+.image-gallery-svg {
+    color: var(--desert-sand);
+}
+
+.home-img,
+img {
+    filter: contrast(0.5);
+    filter: opacity(0.6);
+    border-radius: 20px;
+}
+
+.slick-center {
+    filter: none;
+}
+
+/* STRAPLINE - big, top right */
+.home-strapline {
+    position: absolute;
+    top: 3vh;
+    right: 4.5rem;
+    font-family: "FuturaBook";
+    color: var(--pear);
+    font-size: clamp(1.2rem, 2vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5); /* improve readability */
+    z-index: 1003;
+    border: solid 2px;
+    border-color: var(--desert-sand);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+/* NAME - smaller, bottom left */
+.home-name {
+    position: absolute;
+    width: 100%;
+    bottom: 3vh;
+    left: 4.5rem;
+    text-align: left;
+    font-size: clamp(1rem, 2vw, 2rem);
+    color: var(--linen);
+    font-weight: 500;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    z-index: 2003;
+}

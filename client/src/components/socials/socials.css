@@ -1,0 +1,45 @@
+.socialList {
+    display: flex;
+    justify-content: space-between;
+    float: right;
+    list-style: none;
+    flex-direction: column;
+}
+
+.navSocials {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 17vh;
+    margin-right: 0.5rem;
+}
+
+.icon {
+    color: #dab49d;
+}
+.icon:hover {
+    color: var(--pear) !important;
+    transform: scale(1.3);
+}
+
+.containercontact {
+    background-color: transparent;
+    padding: 0;
+}
+
+@media screen and (max-width: 480px) {
+    .socialList {
+        margin-top: 235px !important;
+        margin-right: 5px !important;
+        display: block;
+        justify-content: right;
+    }
+}
+
+@media screen and (max-width: 770px) {
+    .navSocials {
+        display: none !important;
+    }
+}

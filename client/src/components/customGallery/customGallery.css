@@ -1,0 +1,158 @@
+.galleryContainer {
+    background-color: transparent;
+}
+
+.imageList {
+    display: flex;
+    overflow: scroll;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.imageItem {
+    padding: 5px;
+}
+
+.image-gallery-icon,
+.image-gallery-svg {
+    color: antiquewhite;
+}
+
+/* Ensure all images in the gallery have a fixed height */
+.image-gallery-slide img {
+    height: 68vh;
+    /* Set a fixed height for all images */
+    width: 100vw;
+    /* Maintain aspect ratio */
+    object-fit: contain;
+    /* Crop images to fit the height */
+    max-width: 100%;
+    /* Prevent stretching */
+}
+
+/* Thumbnails should also have a fixed height */
+.image-gallery-thumbnails img {
+    height: 80px;
+    /* Adjust as needed */
+    width: auto;
+    object-fit: cover;
+}
+
+.image-gallery-thumbnails-bottom:on-hover {
+    color: grey;
+    border-color: grey;
+}
+
+.review-slide {
+    position: relative;
+    display: inline-block;
+    background-image: var(--imageUrl);
+    background-blend-mode: soft-light;
+    background-size: cover;
+    background-color: var(--linen);
+}
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+}
+
+.review-img {
+    display: block;
+    width: 100%;
+    height: 50%;
+}
+
+.para-comment {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    text-align: justify;
+    width: 55%;
+    height: 75%;
+    overflow: scroll;
+    line-height: 1.2;
+    font-size: 1rem;
+    font-family: courier !important;
+}
+
+.review-btn {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    text-align: center;
+    align-items: center;
+    text-wrap: wrap;
+    top: 1%;
+    left: 1%;
+    font-family: "BigShouldersBold";
+    font-size: 70%;
+    background-color: var(--pear);
+    border-radius: 100px;
+}
+
+.review-strapline {
+    position: absolute;
+    left: 98%;
+    top: 1%;
+    width: 5rem;
+    height: 5rem;
+    text-align: center;
+    font-family: "BigShouldersMedium";
+    color: var(--pear);
+    font-size: 2.5rem;
+}
+
+.review-name {
+    position: absolute;
+    top: 95%;
+    left: 20%;
+    text-align: center;
+    font-size: 1.3rem;
+    text-overflow: clip;
+}
+
+span {
+    font-family: "Times New Roman";
+    color: var(--eggplant);
+}
+
+@media (max-width: 770px) {
+    .para-comment {
+        height: 55%;
+        width: 70%;
+        top: 12%;
+        font-size: 0.9rem;
+    }
+
+    .image-gallery-slide img {
+        height: 50vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .para-comment {
+        height: 45%;
+        width: 70%;
+        top: 20%;
+        font-size: 0.9rem;
+    }
+
+    .image-gallery-slide img {
+        height: 45vh;
+    }
+}
+
+@media (min-width: 1150px) {
+    .image-gallery-slide img {
+        height: 100vh;
+    }
+
+    .para-comment {
+        height: 70%;
+        width: 70%;
+        top: 15%;
+        font-size: 1.1rem;
+    }
+}

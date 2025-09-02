@@ -1,0 +1,60 @@
+.footerContainer {
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    pointer-events: none;
+    justify-content: space-between;
+}
+
+.columnFour {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+    text-align: center;
+}
+
+.footerPara {
+    text-align: center;
+    text-decoration: none;
+    color: #dab49dff;
+    text-decoration: none;
+    font-family: "FuturaBook";
+    padding-bottom: 10px;
+}
+
+.songbirdLink {
+    color: #dab49dff;
+    text-decoration: none;
+    pointer-events: visible;
+}
+
+.songbirdLink:hover {
+    color: var(--pear);
+    pointer-events: visible;
+}
+
+@media (max-width: 640px) {
+    .columnFour {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1;
+        padding-top: 10px;
+        text-wrap: no-wrap;
+    }
+    .footerPara {
+        padding-bottom: 10px;
+        text-wrap: no-wrap;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .footerPara {
+        font-size: 0.7rem;
+    }
+}

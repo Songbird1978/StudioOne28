@@ -1,0 +1,50 @@
+.outerBox {
+    display: flex;
+    max-height: 100vh;
+    max-width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.socialLinks {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.webNameLink {
+    padding: 20px;
+}
+
+button {
+    background-color: #dab49d;
+    color: var(--chocolate-cosmos);
+    border-color: var(--velvet-mistake);
+    font-size: 0.8em;
+    border-radius: 25px;
+    font-family: "FuturaMedium";
+    display: flex;
+    width: 20vw;
+    justify-content: center;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.enterButton {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}

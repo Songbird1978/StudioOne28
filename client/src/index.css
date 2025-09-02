@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "FuturaBold";
+    src: local("futuraBold"),
+        url(./fonts/FuturaCyrillicBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "FuturaBook";
+    src: local("futuraBook"),
+        url(./fonts/FuturaCyrillicBook.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "FuturaDemi";
+    src: local("futuraDemi"),
+        url(./fonts/FuturaCyrillicDemi.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "FuturaExtraBold";
+    src: local("futuraExtraBold"),
+        url(./fonts/FuturaCyrillicExtraBold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "FuturaHeavy";
+    src: local("futuraHeavy"),
+        url(./fonts/FuturaCyrillicHeavy.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "FuturaLight";
+    src: local("futuraLight"),
+        url(./fonts/FuturaCyrillicLight.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "FuturaMedium";
+    src: local("futuraMedium"),
+        url(./fonts/FuturaCyrillicMedium.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "BigShouldersBold";
+    src: local("bigShouldersBold"),
+        url(./fonts/BigShouldersStencil-Bold.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "BigShouldersBlack";
+    src: local("bigShouldersBlack"),
+        url(./fonts/BigShouldersStencil-Black.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "BigShouldersMedium";
+    src: local("bigShouldersMedium"),
+        url(./fonts/BigShouldersStencil-Medium.ttf) format("truetype");
+}

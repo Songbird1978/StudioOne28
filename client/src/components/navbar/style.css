@@ -1,0 +1,229 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 15vh !important;
+    position: fixed;
+    top: 0px;
+    background-color: transparent !important;
+    width: 100%;
+    padding: 20px;
+    color: #dab49dff;
+    box-shadow: none;
+    z-index: 3000;
+}
+
+.css-1jwoeim {
+    justify-content: center;
+}
+
+.css-eopq3z-MuiPaper-root-MuiAppBar-root {
+    background-color: transparent !important;
+}
+
+.css-1av3j9b-MuiPaper-root-MuiAppBar-root {
+    background-color: transparent !important;
+    --AppBar-color: transparent !important;
+}
+
+.css-1p823my-MuiListItem-root {
+    display: flex;
+    justify-content: center !important;
+    text-align: center !important;
+    color: #dab49dff;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+.css-cfd5wn-MuiListItem-root {
+    text-align: center !important;
+}
+
+.MuiSvgIcon-root .MuiSvgIcon-fontSizeMedium .icon .css-1umw9bq-MuiSvgIcon-root {
+    color: var(--desert-sand);
+}
+
+.MuiSvgIcon-root:hover
+    .MuiSvgIcon-fontSizeMedium:hover
+    .icon:hover
+    .css-1umw9bq-MuiSvgIcon-root:hover {
+    fill: var(--pear);
+}
+IconButton {
+    background-color: none;
+    box-shadow: none;
+}
+
+.LogoNav {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-family: BigShouldersBold;
+    color: #dab49dff;
+    cursor: pointer;
+    text-align: center;
+    text-wrap: nowrap;
+}
+.logoNav:hover {
+    color: var(--pear);
+}
+
+.logo-nav {
+    display: flex;
+    align-items: right;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav-options {
+    display: flex;
+    justify-content: flex-start;
+    color: #dab49dff;
+    list-style-type: none;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.mobile-option {
+    display: none;
+}
+
+.burger {
+    display: none !important;
+    color: #dab49dff;
+    width: 15%;
+}
+
+.burger:hover {
+    color: var(--pear);
+}
+
+.columnOneNav {
+    display: inline-flex;
+    flex-direction: row;
+    padding: 20px;
+    font-size: 0.7rem;
+    list-style-type: none;
+    color: #dab49dff;
+    text-decoration: none;
+    font-family: "Futura";
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+div#drawerLogo.logoDrawer {
+    color: var(--pear) !important;
+    display: flex;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-family: BigShouldersBold;
+    cursor: pointer;
+}
+div:hover#drawerLogo:hover.logoDrawer:hover {
+    color: var(--pear) !important;
+}
+
+.icon {
+    color: var(--desert-sand);
+}
+.icon:hover {
+    color: var(--pear) !important ;
+}
+
+.option-container {
+    display: inline-flex;
+    justify-content: right;
+}
+
+.option :hover {
+    text-decoration: underline;
+    color: hsl(0, 11%, 70%);
+}
+.css-wyeurg-MuiPaper-root-MuiAppBar-root {
+    background-color: transparent !important;
+    box-shadow: none;
+    color: #dab49d;
+}
+
+.css-c0qrpp-MuiPaper-root-MuiAppBar-root {
+    --Appbar-background: none;
+    --Appbar-color: none;
+}
+@media (max-width: 770px) {
+    /*Mobile View */
+    .header {
+        display: flex;
+        padding: 20px 20px;
+        min-height: 15vh;
+    }
+
+    .css-eopq3z-MuiPaper-root-MuiAppBar-root {
+        background-color: transparent !important;
+        box-shadow: none;
+    }
+
+    .columnOneNav {
+        display: none;
+    }
+
+    .topNavOptions {
+        display: none;
+    }
+
+    .navSocials {
+        display: none;
+    }
+
+    .option-container {
+        padding: 0;
+        margin: 0;
+    }
+
+    .burger {
+        display: flex !important;
+    }
+
+    .nav-options.active {
+        display: flex;
+        background-color: darkgray;
+        left: 0;
+        transition: all 0.3s ease;
+        justify-content: flex-start;
+        height: 100%;
+    }
+
+    .menu-icon {
+        width: 50px;
+        height: 50px;
+        color: #dab49dff;
+    }
+
+    .option {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 10px;
+        font-size: 35px;
+    }
+
+    .mobile-option {
+        display: block;
+        color: #dab49dff;
+        padding: 2px;
+    }
+
+    .mobile-menu {
+        display: block;
+        color: #dab49dff;
+        fill: none;
+    }
+}

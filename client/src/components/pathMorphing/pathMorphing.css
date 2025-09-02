@@ -1,0 +1,38 @@
+.containerPathMorphing {
+    position: absolute;
+    z-index: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.pathMorphing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    object-fit: contain;
+    width: 100vw;
+    height: 100vh;
+}
+
+.pathSvg {
+    position: relative;
+    z-index: -100;
+    object-fit: contain;
+    overflow: visible;
+    opacity: 50%;
+}
+/*
+.pathSvg {
+    filter: drop-shadow(4px 4px 1px);
+}
+
+ CSS HEX from coolors.co
+--persian-green: #52a095ff;
+--eggplant: #59353eff;
+--linen: #f3e9dcff;
+--pear: #dae24cff;
+--desert-sand: #dab49dff;
+--citron: 
+*/

@@ -1,0 +1,169 @@
+.controls {
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-bottom: 5%;
+
+    .play:hover {
+        background-color: none;
+        box-shadow: 0px 0px 15px 0px;
+    }
+
+    .prev-next {
+        &:hover {
+            background-color: none;
+            box-shadow: 0px 0px 15px 0px;
+        }
+    }
+}
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 60%;
+    max-height: 100vh;
+    padding: 5%;
+    border-radius: 25px;
+    color: var(--desert-sand);
+    font-weight: 100;
+    box-shadow: var(--cardBox);
+    background: var(--chocolate-cosmos);
+    font-family: "FuturaBook";
+    object-fit: contain;
+
+    .current-song {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 30%;
+        max-width: 100%;
+        padding: 5%;
+        border-radius: 25px;
+        color: var(--eggplant);
+        background: var(--linen-darker);
+        text-align: center;
+        box-shadow: inset 0 0 10px var(--eggplant);
+
+        .trackInfo {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 2.5%;
+            border-radius: 25px;
+            text-align: center;
+        }
+
+        .img-wrap {
+            display: flex;
+            width: 50%;
+            height: 50%;
+            border-radius: 25px;
+            box-shadow: 2px 2px 6px 3px var(--eggplant);
+        }
+
+        .song-name {
+            font-size: 1.2rem;
+            font-family: "FuturaDemi";
+            margin: 0;
+            text-wrap: nowrap;
+            overflow: scroll;
+            scrollbar-width: none;
+        }
+
+        .song-author {
+            color: var(--eggplant);
+            text-align: center;
+            font-size: 0.9rem;
+            font-family: "FuturaBook";
+            text-wrap: nowrap;
+            overflow: scroll;
+            scrollbar-width: none;
+        }
+
+        .time {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10%;
+            width: 50%;
+        }
+        .input {
+            margin: 5% !important;
+        }
+    }
+
+    .play-list {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        overflow-y: scroll;
+        width: 100%;
+        border-radius: 15px;
+        box-shadow: inset 0px -2px 2px var(--desert-sand);
+
+        .track {
+            display: flex;
+            height: 5%;
+            text-align: center;
+            margin-bottom: 10px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+            padding-left: 8px;
+            cursor: pointer;
+            border-radius: 15px;
+            text-wrap: nowrap;
+            text-overflow: clip;
+        }
+
+        .track:hover {
+            background-color: var(--desert-sand);
+            color: var(--eggplant);
+            border-radius: 15px;
+            text-wrap: nowrap;
+        }
+
+        .track.active {
+            background-color: var(--linen-darker);
+            color: var(--eggplant);
+            box-shadow: 1px 1px 1px 1px var(--citron);
+            text-wrap: nowrap;
+            text-overflow: clip;
+        }
+    }
+}
+
+.play-list::-webkit-scrollbar {
+    display: none;
+}
+
+.play-list::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+.play-list::-webkit-scrollbar-track {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .card {
+        max-width: 80%;
+    }
+    .song-name {
+        font-size: 0.8rem;
+    }
+    .song-author {
+        font-size: 0.6rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .card {
+        max-width: 95%;
+    }
+    .song-name {
+        font-size: 0.8rem;
+    }
+    .song-author {
+        font-size: 0.6rem;
+    }
+}
