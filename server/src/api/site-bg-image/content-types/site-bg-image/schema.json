@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_bg_images",
+  "info": {
+    "singularName": "site-bg-image",
+    "pluralName": "site-bg-images",
+    "displayName": "SiteBgImage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

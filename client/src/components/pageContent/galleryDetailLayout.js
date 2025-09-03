@@ -5,7 +5,7 @@ import GalleryPreview from "../contentBlocks/galleryPreview.js";
 
 import Gallery from "../../components/gallery/gallery.js";
 
-import "../../components/gallery/gallery.css";
+//import "../../components/gallery/gallery.css";
 import "./pageContent.css";
 
 function GalleryDetail({ page, cards }) {

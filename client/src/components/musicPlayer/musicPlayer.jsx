@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback } from "react";
 import "./listen.css";
-import "../../components/gallery/gallery.css";
+//import "../../components/gallery/gallery.css";
 import "../../components/musicPlayer/audioPlayer.css";
 import { PlayIcon, SkipForwardIcon, SkipBackIcon } from "@phosphor-icons/react";
 
