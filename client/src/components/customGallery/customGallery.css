@@ -120,9 +120,9 @@ span {
 
 @media (max-width: 770px) {
     .para-comment {
-        height: 55%;
+        height: 52%;
         width: 70%;
-        top: 12%;
+        top: 15%;
         font-size: 0.9rem;
     }
 
@@ -152,7 +152,7 @@ span {
     .para-comment {
         height: 70%;
         width: 70%;
-        top: 15%;
+        top: 12%;
         font-size: 1.1rem;
     }
 }
