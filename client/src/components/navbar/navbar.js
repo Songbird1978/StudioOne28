@@ -69,7 +69,7 @@ function Navbar({ pages = [] }) {
     const location = useLocation();
     const navigate = useNavigate();
 
-    console.log("Current path:", location.pathname);
+    //console.log("Current path:", location.pathname);
     //console.log("prop passed from app", pages)
 
     const theme = useTheme();
