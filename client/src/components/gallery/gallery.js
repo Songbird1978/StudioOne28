@@ -10,7 +10,7 @@ function Gallery({ gallery }) {
     const [selectedImg, setSelectedImg] = useState(null);
     const [isOpen, setModalOpen] = useState(false);
 
-    console.log("gallery in gallery", gallery);
+    //console.log("gallery in gallery", gallery);
 
     // Track window size changes
     useEffect(() => {

@@ -12,7 +12,7 @@ import CustomGallery from "../customGallery/customGallery.js";
 function ReviewLayout({ page, imageUrl, imageAlt, reviews, pages }) {
     const { contentBlocks = [] } = page;
 
-    console.log("reviews from APP", reviews);
+    //console.log("reviews from APP", reviews);
 
     //console.log("content Block from page", contentBlocks);
 

@@ -4,7 +4,7 @@ import GalleryPreview from "../../components/contentBlocks/galleryPreview.js";
 
 function GalleryOverviewLayout({ page = [] }) {
     const { contentBlocks = [] } = page;
-    console.log("content blocks for this page:", page);
+    //console.log("content blocks for this page:", page);
 
     return (
         <div className="layoutContainer">

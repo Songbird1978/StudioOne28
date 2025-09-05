@@ -38,13 +38,13 @@ function App() {
         fetchPages().then((data) => {
             if (mounted) {
                 setPages(data);
-                console.log("pages data from app", data);
+                //console.log("pages data from app", data);
             }
         });
         fetchReviews().then((data) => {
             if (mounted) {
                 setReviews(data.data);
-                console.log("Reviews raw data from app", data.data);
+                //console.log("Reviews raw data from app", data.data);
             }
         });
         return () => {
@@ -62,7 +62,7 @@ function App() {
             setTimeout(() => setLoading(false), delay);
         } catch (err) {
             setError(err.message || "something went wrong loading reviews");
-            console.log("error loading reviews data from app", error);
+            //console.log("error loading reviews data from app", error);
             setLoading(false);
         }
     }

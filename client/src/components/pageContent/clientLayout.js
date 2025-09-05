@@ -13,7 +13,7 @@ function ClientLayout({ page, imageUrl, imageAlt, pages }) {
     const [audioFiles, setAudioFiles] = useState(null);
     const tracks = audioFiles;
 
-    console.log("repeatable buttons", contentBlocks);
+    //console.log("repeatable buttons", contentBlocks);
 
     useEffect(() => {
         //fetchAudio
@@ -21,7 +21,7 @@ function ClientLayout({ page, imageUrl, imageAlt, pages }) {
         fetchAudio().then((data) => {
             if (mounted) {
                 setAudioFiles(data.data);
-                console.log("audio data from app", data.data);
+                //console.log("audio data from app", data.data);
             }
         });
         return () => {
@@ -29,8 +29,8 @@ function ClientLayout({ page, imageUrl, imageAlt, pages }) {
         };
     }, []);
 
-    console.log("current audioFiles in client pages", audioFiles);
-    console.log("tracks from client pages", tracks);
+    //console.log("current audioFiles in client pages", audioFiles);
+    //console.log("tracks from client pages", tracks);
 
     if (!tracks) return <div>Loading...</div>;
 

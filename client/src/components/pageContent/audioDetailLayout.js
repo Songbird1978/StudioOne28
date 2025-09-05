@@ -14,7 +14,7 @@ function AudioDetailLayout({ page }) {
         fetchAudio().then((data) => {
             if (mounted) {
                 setAudioFiles(data.data);
-                console.log("audio data from app", data.data);
+                //console.log("audio data from app", data.data);
             }
         });
         return () => {
@@ -42,7 +42,7 @@ function AudioDetailLayout({ page }) {
         ).values(),
     ];
 
-    console.log("filtered tracks:", filteredTracks);
+    //console.log("filtered tracks:", filteredTracks);
 
     return (
         <div className="layoutContainer">

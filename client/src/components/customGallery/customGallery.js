@@ -5,10 +5,10 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import "./customGallery.css";
 
 const CustomGallery = ({ reviews = [] }) => {
-    console.log("Reviews from reviewLayout:", reviews);
+    //console.log("Reviews from reviewLayout:", reviews);
 
-    console.log("reviews as array", reviews);
-    console.log("LINKS from review", reviews[0].links[0].linkURL);
+    //console.log("reviews as array", reviews);
+    //console.log("LINKS from review", reviews[0].links[0].linkURL);
     //const navigate = useNavigate();
     const API_URL = process.env.REACT_APP_API_URL;
     // transform data into gallery items

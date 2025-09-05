@@ -10,14 +10,13 @@ import "./pageContent.css";
 
 function GalleryDetail({ page, cards }) {
     const [gallery, setGallery] = useState(null);
-
     const { slug } = useParams();
 
     useEffect(() => {
         fetchGalleryBySlug(slug).then(setGallery);
     }, [slug]);
 
-    console.log("current gallery:", gallery);
+    //console.log("current gallery:", gallery);
 
     if (!gallery) return <div>Loading...</div>;
 

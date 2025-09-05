@@ -3,7 +3,7 @@
 export default function TableBlock({ table }) {
     // const navigate = useNavigate();
 
-    console.log("table from tableblock", table);
+    //console.log("table from tableblock", table);
 
     const onlyTable = table.filter(
         (t) =>
@@ -15,8 +15,8 @@ export default function TableBlock({ table }) {
 
     const { tableHeaders = [], tableRows = [] } = onlyTable[0];
 
-    console.log("tableHeaders:", tableHeaders);
-    console.log("tableRows:", tableRows);
+    //console.log("tableHeaders:", tableHeaders);
+    //console.log("tableRows:", tableRows);
 
     if (!tableHeaders.length || !tableRows.length) return null;
 

@@ -24,11 +24,11 @@ export default function GalleryPreview({ cards = [], page }) {
                         style={{ "--bgcolor": page.bgcolor }}
                         onClick={() => {
                             navigate(`/page/${card.galleryUrl}`);
-                            console.log(
-                                "navigate to /page/",
-                                card.galleryUrl,
-                                "was clicked"
-                            );
+                            //console.log(
+                            //  "navigate to /page/",
+                            // card.galleryUrl,
+                            //"was clicked"
+                            //);
                         }}
                     >
                         <div className="cardTitle">{card.title}</div>

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function RelatedContentBlock({ content }) {
     if (!content?.length) return null;
-    console.log("related content from infolayout", content);
+    //console.log("related content from infolayout", content);
 
     const onlyContent = content.filter(
         (c) =>
@@ -10,7 +10,7 @@ export default function RelatedContentBlock({ content }) {
             c._component === "navigation.related-content"
     );
 
-    console.log("only related content", onlyContent);
+    //console.log("only related content", onlyContent);
 
     const pages = onlyContent[0]?.pages || [];
 
@@ -19,7 +19,7 @@ export default function RelatedContentBlock({ content }) {
             <h3 className="RCTitle">{onlyContent[0]?.name}</h3>
             <ul className="relatedList">
                 {pages.map((related, i) => {
-                    console.log("related content pages", pages);
+                    //console.log("related content pages", pages);
                     return (
                         <li key={i} className="contentItem">
                             <Link to={`/page/${related.slug}`}>

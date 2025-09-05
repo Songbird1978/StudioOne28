@@ -1,8 +1,6 @@
 .cardsBlock {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 2fr));
-    /* This is better for small screens, once min() is better supported */
-    /* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
     gap: 1rem;
     position: relative;
     justify-content: space-evenly;
