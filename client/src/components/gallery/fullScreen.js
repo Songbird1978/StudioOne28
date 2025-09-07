@@ -5,10 +5,10 @@ export default function FullScreen({ imageAlt, image, isOpen, setModalOpen }) {
     // const navigate = useNavigate();
     if (!isOpen || !image) return null;
 
-    console.log("image clicked is:", image);
-    console.log("image is open?:", isOpen);
-    console.log("state of modal open or closed is:", setModalOpen);
-    console.log("imageAlt is:", imageAlt);
+    //console.log("image clicked is:", image);
+    //console.log("image is open?:", isOpen);
+    //console.log("state of modal open or closed is:", setModalOpen);
+    //console.log("imageAlt is:", imageAlt);
 
     return (
         <div

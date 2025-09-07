@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { styled, useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import { XCircleIcon } from "@phosphor-icons/react";
@@ -66,10 +66,10 @@ const DrawerHeader = styled("div")(() => ({
 }));
 
 function Navbar({ pages = [] }) {
-    const location = useLocation();
+    //const location = useLocation();
     const navigate = useNavigate();
 
-    console.log("Current path:", location.pathname);
+    //console.log("Current path:", location.pathname);
     //console.log("prop passed from app", pages)
 
     const theme = useTheme();

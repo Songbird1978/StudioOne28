@@ -13,7 +13,7 @@ function ClientLayout({ page, imageUrl, imageAlt, pages }) {
     const [audioFiles, setAudioFiles] = useState(null);
     const tracks = audioFiles;
 
-    console.log("repeatable buttons", contentBlocks);
+    //console.log("repeatable buttons", contentBlocks);
 
     useEffect(() => {
         //fetchAudio
@@ -21,7 +21,7 @@ function ClientLayout({ page, imageUrl, imageAlt, pages }) {
         fetchAudio().then((data) => {
             if (mounted) {
                 setAudioFiles(data.data);
-                console.log("audio data from app", data.data);
+                //console.log("audio data from app", data.data);
             }
         });
         return () => {
@@ -29,8 +29,8 @@ function ClientLayout({ page, imageUrl, imageAlt, pages }) {
         };
     }, []);
 
-    console.log("current audioFiles in client pages", audioFiles);
-    console.log("tracks from client pages", tracks);
+    //console.log("current audioFiles in client pages", audioFiles);
+    //console.log("tracks from client pages", tracks);
 
     if (!tracks) return <div>Loading...</div>;
 
@@ -65,11 +65,11 @@ function ClientLayout({ page, imageUrl, imageAlt, pages }) {
                                     )
                             )
                             .map((track, i) => {
-                                const API_URL = process.env.REACT_APP_API_URL;
+                                //const API_URL = process.env.REACT_APP_API_URL;
                                 const image =
                                     track?.artwork?.formats?.thumbnail;
                                 const imageUrl = image?.url
-                                    ? `${API_URL}${image.url}`
+                                    ? `${image.url}`
                                     : null;
                                 const imageAlt =
                                     image?.alternativeText || "image";

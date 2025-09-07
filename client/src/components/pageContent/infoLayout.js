@@ -13,7 +13,7 @@ function InfoLayout({ page, imageUrl, imageAlt, pages }) {
     //console.log("content Blocks from" + page + "are" + contentBlocks);
     //console.log("this imageURL", imageUrl);
 
-    console.log("repeatable buttons", contentBlocks);
+    //console.log("repeatable buttons", contentBlocks);
 
     return (
         <div

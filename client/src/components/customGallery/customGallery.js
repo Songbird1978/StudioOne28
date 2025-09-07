@@ -5,28 +5,28 @@ import "react-image-gallery/styles/css/image-gallery.css";
 import "./customGallery.css";
 
 const CustomGallery = ({ reviews = [] }) => {
-    console.log("Reviews from reviewLayout:", reviews);
+    //console.log("Reviews from reviewLayout:", reviews);
 
-    console.log("reviews as array", reviews);
-    console.log("LINKS from review", reviews[0].links[0].linkURL);
+    //console.log("reviews as array", reviews);
+    //console.log("LINKS from review", reviews[0].links[0].linkURL);
     //const navigate = useNavigate();
-    const API_URL = process.env.REACT_APP_API_URL;
+    //const API_URL = process.env.REACT_APP_API_URL;
     // transform data into gallery items
     const items = reviews
         .filter((review) => review?.includeInReviews)
         .map((r, i) => ({
-            original: r.image?.url ? `${API_URL}${r.image.url}` : null, // still needed for gallery to handle slide sizing
+            original: r.image?.url ? `${r.image.url}` : null, // still needed for gallery to handle slide sizing
             renderItem: () => (
                 <div
                     className="review-slide"
                     key={i}
                     style={{
-                        "--imageUrl": `url(${API_URL}${r.backgroundImg?.url})`,
+                        "--imageUrl": `url(${r.backgroundImg?.url})`,
                     }}
                     alt={r.fullName}
                 >
                     <img
-                        src={`${API_URL}${r.image.url}`}
+                        src={`${r.image.url}`}
                         alt={r.fullName}
                         className="review-img"
                     />

@@ -10,7 +10,7 @@ export default function usePagebySlug() {
         fetchPages()
             .then((data) => {
                 setPage(data.data);
-                console.log("fetched page data", JSON.stringify(data, null, 2));
+                //console.log("fetched page data", JSON.stringify(data, null, 2));
             })
             .catch(setError)
             .finally(() => setLoading(false));

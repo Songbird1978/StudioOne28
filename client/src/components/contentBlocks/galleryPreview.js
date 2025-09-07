@@ -4,7 +4,7 @@ import "../contentBlocks/contentBlock.css";
 export default function GalleryPreview({ cards = [], page }) {
     const navigate = useNavigate();
 
-    // console.log('cards', cards);
+    //console.log("cards", cards);
 
     if (!cards?.length) return null;
 
@@ -12,9 +12,9 @@ export default function GalleryPreview({ cards = [], page }) {
         <div className="cardsBlock">
             {cards.map((card, i) => {
                 //const slug = page?.slug ?? "missing slug";
-                const API_URL = process.env.REACT_APP_API_URL;
+                //const API_URL = process.env.REACT_APP_API_URL;
                 const image = card.image;
-                const imageUrl = image?.url ? `${API_URL}${image.url}` : null;
+                const imageUrl = image?.url ? `${image.url}` : null;
                 const imageAlt = image?.alternativeText || "image";
                 //console.log("this card image", card.image.url)
                 return (

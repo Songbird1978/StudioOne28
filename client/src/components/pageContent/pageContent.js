@@ -20,9 +20,9 @@ function PageContent({ pages, reviews }) {
 
     if (!currentPage) return <div>Page not found</div>;
 
-    const API_URL = process.env.REACT_APP_API_URL;
+    //const API_URL = process.env.REACT_APP_API_URL;
     const image = currentPage.image;
-    const imageUrl = image?.url ? `${API_URL}${image.url}` : null;
+    const imageUrl = image?.url ? `${image.url}` : null;
     const imageAlt = image?.alternativeText || "image";
 
     const layoutMap = {

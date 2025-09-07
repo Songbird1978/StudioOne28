@@ -7,7 +7,7 @@ import AudioPreview from "../../components/contentBlocks/audioPreview.js";
 import "./pageContent.css";
 
 function AudioOverviewLayout({ page = [], pages }) {
-    console.log("content blocks for this page:", page);
+    //console.log("content blocks for this page:", page);
 
     return (
         <div className="layoutContainer">

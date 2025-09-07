@@ -17,7 +17,7 @@ function GalleryDetail({ page, cards }) {
         fetchGalleryBySlug(slug).then(setGallery);
     }, [slug]);
 
-    console.log("current gallery:", gallery);
+    //console.log("current gallery:", gallery);
 
     if (!gallery) return <div>Loading...</div>;
 

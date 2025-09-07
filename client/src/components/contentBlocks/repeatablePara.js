@@ -3,7 +3,7 @@ import "../../index.css";
 import "../contentBlocks/contentBlock.css";
 
 export default function RepeatablePara({ para, page }) {
-    console.log("repeatable para from infolayout", para);
+    //console.log("repeatable para from infolayout", para);
 
     const onlyPara = Array.isArray(para)
         ? para.filter(
@@ -14,7 +14,7 @@ export default function RepeatablePara({ para, page }) {
         : [];
 
     if (!onlyPara.length) {
-        console.warn("No para block found in", para);
+        //console.warn("No para block found in", para);
         return null; // return early
     }
 

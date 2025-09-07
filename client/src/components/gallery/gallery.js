@@ -5,12 +5,12 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import FullScreen from "./fullScreen.js";
 
 function Gallery({ gallery }) {
-    const API_URL = process.env.REACT_APP_API_URL;
+    //const API_URL = process.env.REACT_APP_API_URL;
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     const [selectedImg, setSelectedImg] = useState(null);
     const [isOpen, setModalOpen] = useState(false);
 
-    console.log("gallery in gallery", gallery);
+    //console.log("gallery in gallery", gallery);
 
     // Track window size changes
     useEffect(() => {
@@ -48,9 +48,7 @@ function Gallery({ gallery }) {
                 >
                     {sortedGallery.map((image) => {
                         const imagePath = getBestImage(image);
-                        const imageUrl = imagePath
-                            ? `${API_URL}${imagePath}`
-                            : null;
+                        const imageUrl = imagePath ? `${imagePath}` : null;
                         const imageAlt = image?.name || "image";
 
                         return (

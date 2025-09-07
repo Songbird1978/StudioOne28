@@ -5,7 +5,7 @@ import "../../components/musicPlayer/audioPlayer.css";
 import { PlayIcon, SkipForwardIcon, SkipBackIcon } from "@phosphor-icons/react";
 
 export default function AudioPlaylistPlayer({ tracks }) {
-    const API_URL = process.env.REACT_APP_API_URL;
+    //const API_URL = process.env.REACT_APP_API_URL;
 
     const audioRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -38,10 +38,10 @@ export default function AudioPlaylistPlayer({ tracks }) {
     const image = currentTrack?.artwork;
     const audioSrc = currentTrack?.audioFile?.url;
     const imagePath = getBestImage(image);
-    const imageUrl = imagePath ? `${API_URL}${imagePath}` : null;
+    const imageUrl = imagePath ? `${imagePath}` : null;
     const imageAlt = currentTrack?.songTitle || "artwork";
-    const audioUrl = audioSrc ? `${API_URL}${audioSrc}` : null;
-    console.log("audioUrl=", audioUrl);
+    const audioUrl = audioSrc ? `${audioSrc}` : null;
+    //console.log("audioUrl=", audioUrl);
 
     //SKIPPING TRACKS FORWARD
     const handleNext = useCallback(() => {

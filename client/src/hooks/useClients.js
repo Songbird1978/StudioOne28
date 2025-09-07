@@ -10,10 +10,10 @@ export default function useClients() {
         fetchClients()
             .then((data) => {
                 setClients(data.data);
-                console.log(
-                    "fetched clients data",
-                    JSON.stringify(data, null, 2)
-                );
+                //console.log(
+                   // "fetched clients data",
+                  //  JSON.stringify(data, null, 2)
+               // );
             })
             .catch(setError)
             .finally(() => setLoading(false));

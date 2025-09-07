@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const CustomGalleryHome = ({ reviews = [] }) => {
-    const API_URL = process.env.REACT_APP_API_URL;
+    //const API_URL = process.env.REACT_APP_API_URL;
     const sliderRef = useRef(null);
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
     const items = reviews
         .filter((review) => review?.includeInReviews === null)
         .map((r, i) => ({
-            src: r.image?.url ? `${API_URL}${r.image.url}` : null, // still needed for gallery to handle slide sizing
+            src: r.image?.url ? `${r.image.url}` : null, // still needed for gallery to handle slide sizing
             name: r.fullName,
             strapline: r.Strapline.toUpperCase() || null,
             alt: r.fullName,
@@ -52,7 +52,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
             <div
                 className="galleryHomeContainer"
                 style={{
-                    "--imageUrl": `url(http://localhost:1337/uploads/thumbnail_film_c9b0de7591.png?updatedAt=2025-08-26T17%3A47%3A35.205Z)`,
+                    "--imageUrl": `url(https://res.cloudinary.com/dbrcftp5l/image/upload/v1757251295/film_c9b0de7591.png)`,
                 }}
                 alt="background"
             >

@@ -14,14 +14,12 @@ export default function AudioPreview({ page, pages }) {
                 .filter((card) => card?.subMenuCategory === slug)
                 .filter((card) => card?.showInNav !== true)
                 .map((card, i) => {
-                    const API_URL = process.env.REACT_APP_API_URL;
+                    //const API_URL = process.env.REACT_APP_API_URL;
                     const image = card.image;
-                    const imageUrl = image?.url
-                        ? `${API_URL}${image.url}`
-                        : null;
+                    const imageUrl = image?.url ? `${image.url}` : null;
                     const imageAlt = image?.alternativeText || "image";
-                    console.log("this card image", imageUrl);
-                    console.log("this card is:", card);
+                    //console.log("this card image", imageUrl);
+                    //console.log("this card is:", card);
 
                     return (
                         <div
@@ -30,11 +28,11 @@ export default function AudioPreview({ page, pages }) {
                             style={{ "--bgcolor": page.bgcolor }} //this the current page background color
                             onClick={() => {
                                 navigate(`/page/${card.slug}`);
-                                console.log(
-                                    "navigate to /page/",
-                                    card.slug,
-                                    "was clicked"
-                                );
+                                //console.log(
+                                // "navigate to /page/",
+                                //card.slug,
+                                //"was clicked"
+                                //);
                             }}
                         >
                             <div className="cardTitle">{card.title}</div>
