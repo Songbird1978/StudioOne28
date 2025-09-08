@@ -125,6 +125,7 @@ coverage
 
 data.db
 .tmp
+.tmp/data.db
 .env
 license.txt
 exports
