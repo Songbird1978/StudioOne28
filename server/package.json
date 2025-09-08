@@ -20,6 +20,7 @@
     "@strapi/provider-upload-cloudinary": "^5.23.3",
     "@strapi/strapi": "5.18.0",
     "better-sqlite3": "11.3.0",
+    "magic-wormhole": "^1.0.6-ad51cf3-1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
