@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
 //import usePageBySlug from '../../hooks/usePageBySlug';
 import PageContainer from "../../components/pageContainer/pageContainer.js";
 import InfoLayout from "../pageContent/infoLayout.js";
@@ -8,12 +9,14 @@ import AudioOverviewLayout from "../pageContent/audioOverviewLayout";
 import AudioDetailLayout from "../pageContent/audioDetailLayout";
 import ClientLayout from "./clientLayout.js";
 import ReviewLayout from "./reviewLayout.js";
+import { ImageContext } from "../../utils/imageContext.js";
 
 import "./pageContent.css";
 
 function PageContent({ pages, reviews }) {
     const { slug } = useParams();
     const currentPage = pages.find((page) => page.slug === slug);
+    const { getImageUrl } = useContext(ImageContext);
 
     //console.log("current page :", currentPage);
     //console.log("pages in pageContent:", pages);
@@ -22,7 +25,9 @@ function PageContent({ pages, reviews }) {
 
     //const API_URL = process.env.REACT_APP_API_URL;
     const image = currentPage.image;
-    const imageUrl = image?.url ? `${image.url}` : null;
+    const rawUrl = image?.url ? `${image.url}` : null;
+    const optimizedUrl = rawUrl ? getImageUrl(rawUrl, "card") : null;
+    const imageUrl = optimizedUrl;
     const imageAlt = image?.alternativeText || "image";
 
     const layoutMap = {

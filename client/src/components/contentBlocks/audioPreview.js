@@ -23,8 +23,8 @@ export default function AudioPreview({ page, pages }) {
                     //const imageUrl = image?.url ? `${image.url}` : null;
                     const imageUrl = rawUrl ? cloudinaryUrl(rawUrl, 600) : null;
 
-                    console.log("this card image", imageUrl);
-                    console.log("this card is:", card);
+                    //console.log("this card image", imageUrl);
+                    //console.log("this card is:", card);
 
                     return (
                         <div

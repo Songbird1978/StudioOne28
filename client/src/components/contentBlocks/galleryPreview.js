@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import "../contentBlocks/contentBlock.css";
+import { ImageContext } from "../../utils/imageContext.js";
 
 export default function GalleryPreview({ cards = [], page }) {
     const navigate = useNavigate();
-
+    const { getImageUrl } = useContext(ImageContext);
     //console.log("cards", cards);
-
     if (!cards?.length) return null;
 
     return (
@@ -14,7 +15,12 @@ export default function GalleryPreview({ cards = [], page }) {
                 //const slug = page?.slug ?? "missing slug";
                 //const API_URL = process.env.REACT_APP_API_URL;
                 const image = card.image;
-                const imageUrl = image?.url ? `${image.url}` : null;
+                const rawUrl = image?.url ? `${image.url}` : null;
+                const optimizedUrl = rawUrl
+                    ? getImageUrl(rawUrl, "card")
+                    : null;
+
+                const imageUrl = optimizedUrl;
                 const imageAlt = image?.alternativeText || "image";
                 //console.log("this card image", card.image.url)
                 return (
