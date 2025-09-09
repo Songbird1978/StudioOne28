@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { ImageContext, getImageUrl } from "./utils/imageContext.js";
 
 import Enter from "./pages/enter/enter.js";
 import Pathmorphing from "./components/pathMorphing/pathMorphing.js";
@@ -67,42 +68,57 @@ function App() {
         }
     }
 
+    const cloudinaryUrl =
+        "https://res.cloudinary.com/dbrcftp5l/image/upload/v1757252063/red_Cord_Carpet_32fa0d5374.png";
+
+    const bgUrl = getImageUrl(cloudinaryUrl, "large");
+
     return (
         <>
-            <div className="App">
+            <div
+                className="App"
+                style={{
+                    backgroundImage: `url(${bgUrl})`,
+                }}
+            >
                 {!hideLayout && <Navbar pages={pages} />}
                 {!hideLayout && <Pathmorphing />}
                 <main className="mainArea">
                     {/* Scrollable main content */}
                     <AnimatePresence mode="wait">
-                        <Routes location={location} key={location.pathname}>
-                            <Route
-                                path="/"
-                                element={
-                                    <Enter
-                                        loadReviews={loadReviews}
-                                        loading={loading}
-                                        error={error}
-                                        reviews={reviews}
-                                    />
-                                }
-                            />
-                            <Route
-                                path="/home"
-                                element={
-                                    <Home reviews={reviews} loading={loading} />
-                                }
-                            />
-                            <Route
-                                path="/page/:slug"
-                                element={
-                                    <PageContent
-                                        pages={pages}
-                                        reviews={reviews}
-                                    />
-                                }
-                            />
-                        </Routes>
+                        <ImageContext.Provider value={{ getImageUrl }}>
+                            <Routes location={location} key={location.pathname}>
+                                <Route
+                                    path="/"
+                                    element={
+                                        <Enter
+                                            loadReviews={loadReviews}
+                                            loading={loading}
+                                            error={error}
+                                            reviews={reviews}
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/home"
+                                    element={
+                                        <Home
+                                            reviews={reviews}
+                                            loading={loading}
+                                        />
+                                    }
+                                />
+                                <Route
+                                    path="/page/:slug"
+                                    element={
+                                        <PageContent
+                                            pages={pages}
+                                            reviews={reviews}
+                                        />
+                                    }
+                                />
+                            </Routes>
+                        </ImageContext.Provider>
                     </AnimatePresence>
                 </main>
                 {!hideLayout && <Footer />}

@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useContext } from "react";
+import { ImageContext } from "../../utils/imageContext.js";
 import Slider from "react-slick";
 import "./customGalleryHome.css";
 import "slick-carousel/slick/slick.css";
@@ -7,6 +8,7 @@ import "slick-carousel/slick/slick-theme.css";
 const CustomGalleryHome = ({ reviews = [] }) => {
     //const API_URL = process.env.REACT_APP_API_URL;
     const sliderRef = useRef(null);
+    const { getImageUrl } = useContext(ImageContext);
 
     useEffect(() => {
         // Give Slick time to mount before forcing a recalc
@@ -36,23 +38,33 @@ const CustomGalleryHome = ({ reviews = [] }) => {
 
     const items = reviews
         .filter((review) => review?.includeInReviews === null)
-        .map((r, i) => ({
-            src: r.image?.url ? `${r.image.url}` : null, // still needed for gallery to handle slide sizing
-            name: r.fullName,
-            strapline: r.Strapline.toUpperCase() || null,
-            alt: r.fullName,
-            id: r.id,
-            key: i,
-        }));
+        .map((r, i) => {
+            const rawUrl = r.image?.url || null;
+            const optimizedUrl = rawUrl ? getImageUrl(rawUrl, "card") : null;
+
+            return {
+                src: optimizedUrl, // still needed for gallery to handle slide sizing
+                name: r.fullName,
+                strapline: r.Strapline.toUpperCase() || null,
+                alt: r.fullName,
+                id: r.id,
+                key: i,
+            };
+        });
 
     if (!items || items.length === 0) return null;
+
+    const cloudinaryUrl =
+        "https://res.cloudinary.com/dbrcftp5l/image/upload/v1757251295/film_c9b0de7591.png";
+
+    const bgUrl = getImageUrl(cloudinaryUrl, "large");
 
     return (
         <>
             <div
                 className="galleryHomeContainer"
                 style={{
-                    "--imageUrl": `url(https://res.cloudinary.com/dbrcftp5l/image/upload/v1757251295/film_c9b0de7591.png)`,
+                    "--imageUrl": `url(${bgUrl})`,
                 }}
                 alt="background"
             >

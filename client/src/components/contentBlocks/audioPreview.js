@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "../contentBlocks/contentBlock.css";
 import { useParams } from "react-router-dom";
+import { cloudinaryUrl } from "../../utils/cloudinary.js";
 
 export default function AudioPreview({ page, pages }) {
     const navigate = useNavigate();
@@ -16,10 +17,14 @@ export default function AudioPreview({ page, pages }) {
                 .map((card, i) => {
                     //const API_URL = process.env.REACT_APP_API_URL;
                     const image = card.image;
-                    const imageUrl = image?.url ? `${image.url}` : null;
                     const imageAlt = image?.alternativeText || "image";
-                    //console.log("this card image", imageUrl);
-                    //console.log("this card is:", card);
+                    const rawUrl =
+                        image?.formats?.thumbnail?.url || image?.url || null;
+                    //const imageUrl = image?.url ? `${image.url}` : null;
+                    const imageUrl = rawUrl ? cloudinaryUrl(rawUrl, 600) : null;
+
+                    console.log("this card image", imageUrl);
+                    console.log("this card is:", card);
 
                     return (
                         <div
@@ -41,6 +46,7 @@ export default function AudioPreview({ page, pages }) {
                                     className="cardImage"
                                     src={imageUrl}
                                     alt={imageAlt}
+                                    loading="lazy"
                                 />
                             ) : (
                                 <div className="cardImage">Loading...</div>
