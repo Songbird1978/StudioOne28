@@ -18,7 +18,7 @@ import "../../App.css";
 import "../../index.css";
 import NavOptions from "../navbar/navOptions.js";
 import Socials from "../socials/socials.js";
-import background from "../../images/redCordCarpet.png";
+//import background from "../../images/redCordCarpet.png";
 
 const drawerWidth = window.innerWidth;
 
@@ -157,7 +157,7 @@ function Navbar({ pages = [] }) {
                     "& .MuiDrawer-paper": {
                         width: drawerWidth,
                         backgroundColor: "#59353E",
-                        backgroundImage: `url(${background})`,
+                        backgroundImage: `url(https://res.cloudinary.com/dbrcftp5l/image/upload/v1757252063/red_Cord_Carpet_32fa0d5374.png)`,
                         backgroundSize: "cover",
                         backgroundRepeat: "none",
                         backgroundBlendMode: "darken",
