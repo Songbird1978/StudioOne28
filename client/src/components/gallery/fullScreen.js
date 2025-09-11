@@ -35,11 +35,11 @@ export default function FullScreen({ imageAlt, image, isOpen, setModalOpen }) {
                         fill: "#dae24c",
                     },
                     position: "absolute",
-                    top: "5rem",
-                    right: "5rem",
                     width: "auto",
+                    top: "4rem",
+                    left: "1rem",
                     cursor: "pointer",
-                    zIndex: "6000",
+                    zIndex: "5000",
                     pointerEvents: "auto",
                 }}
                 onClick={() => {
@@ -50,12 +50,10 @@ export default function FullScreen({ imageAlt, image, isOpen, setModalOpen }) {
                 className="imageContainer"
                 style={{
                     display: "flex",
-                    maxWidth: "85vw",
+                    maxWidth: "90vw",
                     maxHeight: "85vh",
-                    marginTop: "15vh",
                     border: "var(--desert-sand) solid 2px",
-                    borderRadius: "25px",
-                    pointerEvents: "none",
+                    borderRadius: "12px",
                 }}
             >
                 <img
@@ -68,8 +66,9 @@ export default function FullScreen({ imageAlt, image, isOpen, setModalOpen }) {
                         height: "auto",
                         objectFit: "contain",
                         display: "block",
-                        borderRadius: "25px",
+                        borderRadius: "12px",
                     }}
+                    onClick={() => setModalOpen(false)}
                 />
             </div>
         </div>

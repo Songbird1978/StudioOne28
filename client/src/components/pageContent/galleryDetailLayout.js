@@ -8,7 +8,7 @@ import Gallery from "../../components/gallery/gallery.js";
 //import "../../components/gallery/gallery.css";
 import "./pageContent.css";
 
-function GalleryDetail({ page, cards }) {
+function GalleryDetail({ page, cards, imageUrl }) {
     const [gallery, setGallery] = useState(null);
 
     const { slug } = useParams();
@@ -29,7 +29,11 @@ function GalleryDetail({ page, cards }) {
             <p className="pagePara">{page.description}</p>
 
             <section className="galleryOptions">
-                <Gallery gallery={gallery.gallery} page={page} />
+                <Gallery
+                    gallery={gallery.gallery}
+                    imageUrl={imageUrl}
+                    page={page}
+                />
             </section>
             <GalleryPreview page={page} cards={cards} />
         </div>

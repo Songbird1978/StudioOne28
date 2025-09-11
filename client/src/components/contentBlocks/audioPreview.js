@@ -1,11 +1,15 @@
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import "../contentBlocks/contentBlock.css";
 import { useParams } from "react-router-dom";
-import { cloudinaryUrl } from "../../utils/cloudinary.js";
+//import { cloudinaryUrl } from "../../utils/cloudinary.js";
+import { ImageContext } from "../../utils/imageContext.js";
 
 export default function AudioPreview({ page, pages }) {
     const navigate = useNavigate();
     const { slug } = useParams();
+    const { getImageUrl } = useContext(ImageContext);
+
     //re-using cards (audioFiles) passed from AudioOverviewLayout (fetch all)
     if (!pages?.length) return null;
 
@@ -20,8 +24,11 @@ export default function AudioPreview({ page, pages }) {
                     const imageAlt = image?.alternativeText || "image";
                     const rawUrl =
                         image?.formats?.thumbnail?.url || image?.url || null;
+                    const optimizedUrl = rawUrl
+                        ? getImageUrl(rawUrl, "card")
+                        : null;
                     //const imageUrl = image?.url ? `${image.url}` : null;
-                    const imageUrl = rawUrl ? cloudinaryUrl(rawUrl, 600) : null;
+                    const imageUrl = optimizedUrl;
 
                     //console.log("this card image", imageUrl);
                     //console.log("this card is:", card);

@@ -1,4 +1,4 @@
-const cloudName = "dbrcftp5l"; // 🔴 Replace with your Cloudinary cloud name
+const cloudName = "dbrcftp5l";
 const baseUrl = `https://res.cloudinary.com/${cloudName}/image/upload/`;
 
 export function cloudinaryUrl(url, width = 800, options = "") {
