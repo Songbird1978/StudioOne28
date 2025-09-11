@@ -44,7 +44,7 @@ export default ({ env }) => {
     },
     sqlite: {
       connection: {
-        filename: env('DATABASE_FILENAME', '/var/data/data.db'),
+        filename: env('DATABASE_FILENAME', '/var/data/data.db'), //for render = '/var/data/data.db' OR for local '.tmp/data.db'
       },
       useNullAsDefault: true,
     },

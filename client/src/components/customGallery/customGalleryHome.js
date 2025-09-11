@@ -11,29 +11,29 @@ const CustomGalleryHome = ({ reviews = [] }) => {
     const { getImageUrl } = useContext(ImageContext);
 
     useEffect(() => {
-        // Give Slick time to mount before forcing a recalc
         const timer = setTimeout(() => {
             if (sliderRef.current) {
-                sliderRef.current.slickGoTo(0); // jump to first slide
+                sliderRef.current.slickGoTo(0); // reset to first
+                sliderRef.current.slickPause(); // if you want autoplay stable
+                //sliderRef.current.innerSlider.onWindowResized(); // trigger internal recalc
             }
-            window.dispatchEvent(new Event("resize")); // force width recalculation
-        }, 300);
+        }, 2000);
 
         return () => clearTimeout(timer);
     }, []);
-
     const settings = {
         dots: false,
         centerMode: true,
         infinite: true,
+        speed: 10000,
         autoplay: true,
-        speed: 2500,
-        duration: 2500,
+        autoplaySpeed: 0,
+        cssEase: "linear",
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
-        prevArrow: false,
-        nextArrow: false,
+        prevArrow: true,
+        nextArrow: true,
     };
 
     const items = reviews
@@ -69,6 +69,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
                 alt="background"
             >
                 <Slider
+                    initialSlide={0}
                     key={reviews.length}
                     {...settings}
                     className="home-slider"

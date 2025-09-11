@@ -8,6 +8,14 @@ body {
     background: var(--chocolate-cosmos);
 }
 
+:root {
+    --vh: 100vh;
+}
+
+.fullscreen {
+    height: calc(var(--vh, 1vh) * 100);
+}
+
 .App {
     display: flex;
     align-items: center;
