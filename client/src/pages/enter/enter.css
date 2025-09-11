@@ -32,7 +32,7 @@
 button {
     background-color: #dab49d;
     color: var(--chocolate-cosmos);
-    border-color: var(--velvet-mistake);
+    border: none;
     font-size: 0.8em;
     border-radius: 25px;
     font-family: "FuturaMedium";
