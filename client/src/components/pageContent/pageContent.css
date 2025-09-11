@@ -1,7 +1,7 @@
 .pageTitle {
     grid-area: 1 / 1;
     font-family: "bigShouldersBlack";
-    font-size: clamp(0.5rem, 8vw, 5rem);
+    font-size: clamp(2rem, 8vw, 5rem);
     text-align: left;
     width: 100%;
     color: var(--titleColor);
