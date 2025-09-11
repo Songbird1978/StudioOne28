@@ -22,6 +22,22 @@ function InfoLayout({ page, imageUrl, imageAlt, pages }) {
             alt={imageAlt}
         >
             <div className="pageBanner">
+                <img
+                    src={imageUrl}
+                    alt={imageAlt}
+                    style={{
+                        width: "100%",
+                        height: "auto",
+                        position: "relative",
+                        filter: "opacity(1)",
+                        backgroundColor: "rgb(243, 233, 220, 80%)",
+                        borderRadius: "0",
+                        border: "var(--linen) solid 20px",
+                        borderLeft: "0",
+                        borderRight: "0",
+                        justifySelf: "center",
+                    }}
+                />
                 <div
                     className="pageTitle"
                     style={{
