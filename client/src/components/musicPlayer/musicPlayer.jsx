@@ -13,10 +13,17 @@ export default function AudioPlaylistPlayer({ tracks }) {
     const [isPlaying, setIsPlaying] = useState(false);
     const [progress, setProgress] = useState(0);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const { getImageUrl } = useContext(ImageContext);
 
     //console.log("page in music player", page);
     //console.log('current page from page.slug', currentPage);
     //console.log( 'tracks from music player', tracks );
+
+    const getResponsiveImage = (url) => {
+        if (windowWidth < 500) return getImageUrl(url, "thumbnail");
+        if (windowWidth < 1000) return getImageUrl(url, "card");
+        return getImageUrl(url, "large");
+    };
 
     // Track window size changes
     useEffect(() => {
@@ -24,22 +31,11 @@ export default function AudioPlaylistPlayer({ tracks }) {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-    //get best image size
-    const getBestImage = (image) => {
-        if (windowWidth < 600 && image?.formats?.small)
-            return image.formats.small.url;
-        if (windowWidth < 1200 && image?.formats?.medium)
-            return image.formats.medium.url;
-        if (image?.formats?.large) return image.formats.large.url;
-
-        return image.url;
-    };
 
     const currentTrack = tracks[currentIndex];
-    const image = currentTrack?.artwork;
+    const rawImageUrl = currentTrack?.artwork?.url;
     const audioSrc = currentTrack?.audioFile?.url;
-    const imagePath = getBestImage(image);
-    const imageUrl = imagePath ? `${imagePath}` : null;
+    const imageUrl = rawImageUrl ? getResponsiveImage(rawImageUrl) : null;
     const imageAlt = currentTrack?.songTitle || "artwork";
     const audioUrl = audioSrc ? `${audioSrc}` : null;
     //console.log("audioUrl=", audioUrl);

@@ -29,7 +29,7 @@ function InfoLayout({ page, imageUrl, imageAlt, pages }) {
                         width: "100%",
                         height: "auto",
                         position: "relative",
-                        filter: "opacity(1)",
+                        filter: "opacity(0.9)",
                         backgroundColor: "rgb(243, 233, 220, 80%)",
                         borderRadius: "0",
                         border: "var(--linen) solid 20px",

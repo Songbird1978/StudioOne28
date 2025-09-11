@@ -36,7 +36,7 @@ export default function FullScreen({ imageAlt, image, isOpen, setModalOpen }) {
                     },
                     position: "absolute",
                     width: "auto",
-                    top: "4rem",
+                    top: "15vh",
                     left: "1rem",
                     cursor: "pointer",
                     zIndex: "5000",
@@ -51,7 +51,7 @@ export default function FullScreen({ imageAlt, image, isOpen, setModalOpen }) {
                 style={{
                     display: "flex",
                     maxWidth: "90vw",
-                    maxHeight: "85vh",
+                    maxHeight: "75vh",
                     border: "var(--desert-sand) solid 2px",
                     borderRadius: "12px",
                 }}
