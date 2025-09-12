@@ -40,7 +40,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
         .filter((review) => review?.includeInReviews === null)
         .map((r, i) => {
             const rawUrl = r.image?.url || null;
-            const optimizedUrl = rawUrl ? getImageUrl(rawUrl) : null;
+            const optimizedUrl = rawUrl ? getImageUrl(rawUrl, "large") : null;
 
             return {
                 src: optimizedUrl, // still needed for gallery to handle slide sizing
