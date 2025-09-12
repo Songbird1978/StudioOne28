@@ -49,6 +49,7 @@ function AudioDetailLayout({ page }) {
             <div className="pageBanner">
                 <div
                     className="pageTitle"
+                    id="audioTitle"
                     style={{ "--titleColor": page.bgcolor }}
                 >
                     {page.title}

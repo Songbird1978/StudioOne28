@@ -160,4 +160,10 @@ th {
         fill: var(--eggplant);
         width: 30px !important;
     }
+    #audioTitle {
+        max-height: 15vh;
+    }
+    .audioOverviewPara {
+        max-height: 100%;
+    }
 }
