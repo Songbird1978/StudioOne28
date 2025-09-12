@@ -46,7 +46,7 @@ function AudioDetailLayout({ page }) {
 
     return (
         <div className="layoutContainer">
-            <div className="pageBanner" id="audioBanner">
+            <div className="audioBanner" id="audioBanner">
                 <div
                     className="pageTitle"
                     id="audioTitle"
@@ -54,7 +54,7 @@ function AudioDetailLayout({ page }) {
                 >
                     {page.title}
                 </div>
-                <p className="audioOverviewPara" id="audioLayoutPara">
+                <p className="pagePara" id="audioLayoutPara">
                     {page.description}
                 </p>
             </div>

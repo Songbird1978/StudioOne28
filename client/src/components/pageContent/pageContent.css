@@ -32,8 +32,11 @@
     width: 100%;
     height: 100vh;
 }
-#audioBanner {
-    height: 100%;
+
+.audioBanner {
+    display: grid;
+    place-items: top;
+    width: 100%;
 }
 
 .pageSocialsContainer .navSocials {
@@ -85,6 +88,14 @@
     position: relative;
     grid-area: 1 / 1;
     z-index: 800;
+}
+
+#audioTitle {
+    grid-area: 1/1;
+}
+
+#audioLayoutPara {
+    grid-area: 2 / 1;
 }
 
 .audioOverviewPara {
@@ -162,11 +173,5 @@ th {
         height: 30px !important;
         fill: var(--eggplant);
         width: 30px !important;
-    }
-    #audioTitle {
-        max-height: 12vh;
-    }
-    .audioOverviewPara {
-        max-height: 100%;
     }
 }
