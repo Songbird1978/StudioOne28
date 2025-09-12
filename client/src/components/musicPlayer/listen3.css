@@ -1,0 +1,156 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* desktop limit */
+    padding: 5%;
+    border-radius: 25px;
+    color: var(--desert-sand);
+    font-weight: 100;
+    box-shadow: var(--cardBox);
+    background: var(--chocolate-cosmos);
+    font-family: "FuturaBook";
+    box-sizing: border-box;
+}
+
+/* Current song section */
+.current-song {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 25px;
+    color: var(--eggplant);
+    background: var(--linen-darker);
+    text-align: center;
+    box-shadow: inset 0 0 10px var(--eggplant);
+    box-sizing: border-box;
+}
+
+.current-song .trackInfo {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Album artwork */
+.current-song .img-wrap {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px 3px var(--eggplant);
+    margin: 0.5rem 0 1rem 0;
+    object-fit: contain;
+}
+
+/* Song text */
+.song-name,
+.song-author {
+    white-space: nowrap;
+    overflow: hidden;
+
+    display: block; /* ✅ ensures proper box sizing */
+}
+
+.song-name {
+    font-size: 1.1rem;
+    font-family: "FuturaDemi";
+    margin-bottom: 0.25rem;
+}
+
+.song-author {
+    font-size: 0.9rem;
+    font-family: "FuturaBook";
+    color: var(--eggplant);
+}
+
+/* Controls (always in a row) */
+.controls {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 0;
+    gap: 1rem;
+}
+
+.controls .play:hover,
+.controls .prev-next:hover {
+    box-shadow: 0px 0px 15px 0px;
+    border-radius: 50%;
+    transition: box-shadow 0.2s ease;
+}
+
+/* Playlist */
+.play-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow-y: auto;
+    width: 100%;
+    max-height: 200px;
+    border-radius: 15px;
+    box-shadow: inset 0px -2px 2px var(--desert-sand);
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.play-list .track {
+    padding: 0.4rem 0.8rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.play-list .track:hover {
+    background-color: var(--desert-sand);
+    color: var(--eggplant);
+}
+
+.play-list .track.active {
+    background-color: var(--linen-darker);
+    color: var(--eggplant);
+    box-shadow: 1px 1px 1px 1px var(--citron);
+}
+
+/* Scrollbar hidden */
+.play-list::-webkit-scrollbar {
+    display: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .card {
+        max-width: 95%;
+        padding: 3%;
+    }
+
+    .song-name {
+        font-size: 0.9rem;
+    }
+
+    .song-author {
+        font-size: 0.7rem;
+    }
+
+    .controls {
+        gap: 0.5rem;
+    }
+
+    .controls svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (max-width: 400px) {
+    .song-name {
+        font-size: 0.8rem;
+    }
+    .song-author {
+        font-size: 0.6rem;
+    }
+}

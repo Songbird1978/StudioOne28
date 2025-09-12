@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect, useCallback, useContext } from "react";
 import { ImageContext } from "../../utils/imageContext.js";
-import "./listen.css";
+import "./listen3.css";
 //import "../../components/gallery/gallery.css";
 import "../../components/musicPlayer/audioPlayer.css";
 import { PlayIcon, SkipForwardIcon, SkipBackIcon } from "@phosphor-icons/react";

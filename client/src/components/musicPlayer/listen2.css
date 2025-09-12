@@ -1,0 +1,99 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%; /* take full width by default */
+    max-width: 600px; /* center and limit on larger screens */
+    padding: 5%;
+    border-radius: 25px;
+    color: var(--desert-sand);
+    font-weight: 100;
+    box-shadow: var(--cardBox);
+    background: var(--chocolate-cosmos);
+    font-family: "FuturaBook";
+}
+
+/* Song area */
+.current-song {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5%;
+    border-radius: 25px;
+    color: var(--eggplant);
+    background: var(--linen-darker);
+    text-align: center;
+    box-shadow: inset 0 0 10px var(--eggplant);
+}
+
+.current-song .img-wrap {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px 3px var(--eggplant);
+    margin-bottom: 1rem;
+}
+
+.trackInfo {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 2.5%;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.song-name,
+.song-author {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+}
+
+.controls .play:hover,
+.controls .prev-next:hover {
+    box-shadow: 0px 0px 15px 0px;
+}
+
+/* Playlist */
+.play-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    overflow-y: auto;
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: inset 0px -2px 2px var(--desert-sand);
+    max-height: 200px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .card {
+        max-width: 95%;
+        padding: 3%;
+    }
+
+    .controls {
+        flex-direction: column; /* stack controls vertically on narrow screens */
+        gap: 1rem;
+    }
+
+    .song-name {
+        font-size: 0.9rem;
+    }
+
+    .song-author {
+        font-size: 0.7rem;
+    }
+}
