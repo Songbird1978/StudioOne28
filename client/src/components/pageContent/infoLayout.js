@@ -29,7 +29,7 @@ function InfoLayout({ page, imageUrl, imageAlt, pages }) {
                         width: "100%",
                         maxHeight: "50vh",
                         objectFit: "cover",
-                        objectPosition: "center",
+                        objectPosition: "bottom",
                         position: "relative",
                         filter: "opacity(1)",
                         backgroundColor: "rgb(243, 233, 220, 80%)",

@@ -38,6 +38,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
 
     const items = reviews
         .filter((review) => review?.includeInReviews === null)
+        .reverse()
         .map((r, i) => {
             const rawUrl = r.image?.url || null;
             const optimizedUrl = rawUrl ? getImageUrl(rawUrl, "large") : null;
