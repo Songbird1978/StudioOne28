@@ -26,7 +26,7 @@ function PageContent({ pages, reviews }) {
     //const API_URL = process.env.REACT_APP_API_URL;
     const image = currentPage.image;
     const rawUrl = image?.url ? `${image.url}` : null;
-    const optimizedUrl = rawUrl ? getImageUrl(rawUrl, "card") : null;
+    const optimizedUrl = rawUrl ? getImageUrl(rawUrl) : null;
     const imageUrl = optimizedUrl;
     const imageAlt = image?.alternativeText || "image";
 
