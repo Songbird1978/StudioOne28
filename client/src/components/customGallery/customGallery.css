@@ -143,7 +143,7 @@ span {
     .para-comment {
         height: 48%;
         width: 65%;
-        top: 20%;
+        top: 15%;
         font-size: 0.9rem;
     }
 
@@ -159,7 +159,7 @@ span {
     .para-comment {
         height: 48%;
         width: 65%;
-        top: 23%;
+        top: 15%;
         font-size: 0.9rem;
     }
 
@@ -176,6 +176,9 @@ span {
         height: 65vh;
     }
 
+    .fullscreen.image-gallery-slide {
+        height: 100vh;
+    }
     .para-comment {
         height: 50%;
         width: 58%;
@@ -184,5 +187,17 @@ span {
     }
     .fullscreen {
         height: calc(var(--vh, 1vh) * 100);
+    }
+}
+
+@media (min-width: 1250px) {
+    .image-gallery-slide img {
+        height: 100vh;
+    }
+
+    .para-comment {
+        height: 60%;
+        width: 55%;
+        top: 15%;
     }
 }

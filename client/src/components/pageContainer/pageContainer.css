@@ -12,6 +12,7 @@
     z-index: 1000;
     border-radius: 25px;
     box-shadow: var(--cardBox);
+    overscroll-behavior: none;
 }
 
 p {
