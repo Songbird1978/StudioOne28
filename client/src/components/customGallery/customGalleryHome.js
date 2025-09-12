@@ -44,9 +44,9 @@ const CustomGalleryHome = ({ reviews = [] }) => {
 
             return {
                 src: optimizedUrl, // still needed for gallery to handle slide sizing
-                name: r.fullName,
-                strapline: r.Strapline.toUpperCase() || null,
-                alt: r.fullName,
+                name: r.fullName || "",
+                strapline: r.Strapline.toUpperCase() || "",
+                alt: r.fullName || "",
                 id: r.id,
                 key: i,
             };
