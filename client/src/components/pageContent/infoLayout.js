@@ -27,14 +27,13 @@ function InfoLayout({ page, imageUrl, imageAlt, pages }) {
                     alt={imageAlt}
                     style={{
                         width: "100%",
-                        height: "auto",
+                        maxHeight: "50vh",
+                        objectFit: "cover",
                         position: "relative",
-                        filter: "opacity(0.9)",
+                        filter: "opacity(1)",
                         backgroundColor: "rgb(243, 233, 220, 80%)",
                         borderRadius: "0",
-                        border: "var(--linen) solid 20px",
-                        borderLeft: "0",
-                        borderRight: "0",
+                        border: "solid #f3e9dcff 20px",
                         justifySelf: "center",
                     }}
                 />
