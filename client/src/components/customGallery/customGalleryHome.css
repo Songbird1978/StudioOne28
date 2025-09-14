@@ -71,7 +71,7 @@
     height: 54vh;
     width: 100%;
     object-fit: cover;
-    object-position: 50% 50%;
+    object-position: 20% 50%;
 }
 
 .image-gallery-icon,
@@ -88,6 +88,12 @@ img {
 
 .slick-center {
     filter: none;
+}
+
+.home-slide img:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--desert-sand);
+    border-radius: 6px;
 }
 
 /* STRAPLINE - big, top right */
