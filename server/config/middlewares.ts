@@ -18,7 +18,13 @@ export default [
   {
   name: 'strapi::cors',
       config: {
-        origin: ['http://localhost:3000', 'https://studio-one28.vercel.app', 'https://studioone28.com', 'https://jonnycallender.com'],
+        origin: ['http://localhost:3000', 
+        'https://studio-one28.vercel.app', 
+        'https://www.studioone28.com',
+         'https://www.jonnycallender.com',
+              'https://studioone28.com',
+         'https://jonnycallender.com'
+          ],
         methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
       headers: ['Content-Type', 'Authorization', 'Origin', 'Accept'],
       credentials: true,
