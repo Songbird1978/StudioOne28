@@ -74,6 +74,7 @@
     scrollbar-width: none;
     background-size: cover;
     z-index: 0;
+    overscroll-behavior: none;
 }
 
 .layoutContainer::before {
