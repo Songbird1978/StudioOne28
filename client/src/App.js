@@ -68,18 +68,16 @@ function App() {
         }
     }
 
-    const cloudinaryUrl =
-        "https://res.cloudinary.com/dbrcftp5l/image/upload/v1757252063/red_Cord_Carpet_32fa0d5374.png";
+    //const cloudinaryUrl =
+    //"https://res.cloudinary.com/dbrcftp5l/image/upload/v1757252063/red_Cord_Carpet_32fa0d5374.png";
 
-    const bgUrl = getImageUrl(cloudinaryUrl, "large");
+    //const bgUrl = getImageUrl(cloudinaryUrl, "large");
 
     return (
         <>
             <div
                 className="App"
-                style={{
-                    backgroundImage: `url(${bgUrl})`,
-                }}
+                //style={{backgroundImage: `url(${bgUrl})`}}
             >
                 {!hideLayout && <Navbar pages={pages} />}
                 {!hideLayout && <Pathmorphing />}

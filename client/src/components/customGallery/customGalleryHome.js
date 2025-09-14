@@ -55,18 +55,16 @@ const CustomGalleryHome = ({ reviews = [] }) => {
 
     if (!items || items.length === 0) return null;
 
-    const cloudinaryUrl =
-        "https://res.cloudinary.com/dbrcftp5l/image/upload/v1757251295/film_c9b0de7591.png";
+    //const cloudinaryUrl =
+    //"https://res.cloudinary.com/dbrcftp5l/image/upload/v1757251295/film_c9b0de7591.png";
 
-    const bgUrl = getImageUrl(cloudinaryUrl, "large");
+    //const bgUrl = getImageUrl(cloudinaryUrl, "large");
 
     return (
         <>
             <div
                 className="galleryHomeContainer"
-                style={{
-                    "--imageUrl": `url(${bgUrl})`,
-                }}
+                //</>style={{ // "--imageUrl": `url(${bgUrl})`,}}
                 alt="background"
             >
                 <Slider
