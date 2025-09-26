@@ -157,7 +157,6 @@ function Navbar({ pages = [] }) {
                     "& .MuiDrawer-paper": {
                         width: drawerWidth,
                         backgroundColor: "#59353E",
-                        //backgroundImage: `url(https://res.cloudinary.com/dbrcftp5l/image/upload/v1757252063/red_Cord_Carpet_32fa0d5374.png)`,
                         backgroundSize: "cover",
                         backgroundRepeat: "none",
                         backgroundBlendMode: "darken",

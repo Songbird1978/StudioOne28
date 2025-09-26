@@ -81,7 +81,7 @@ const CustomGallery = ({ reviews = [] }) => {
                     showPlayButton={true}
                     showThumbnails={false}
                     showFullscreenButton={true}
-                    autoPlay={true}
+                    autoPlay={false}
                     slideInterval={10000}
                     additionalClass="custom-gallery"
                     style={{ padding: "20px" }}

@@ -1,53 +1,29 @@
-import React, { useEffect, useRef, useContext } from "react";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { ImageContext } from "../../utils/imageContext.js";
-import Slider from "react-slick";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "./customGalleryHome.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 const CustomGalleryHome = ({ reviews = [] }) => {
     //const API_URL = process.env.REACT_APP_API_URL;
-    const sliderRef = useRef(null);
+    const Navigate = useNavigate();
     const { getImageUrl } = useContext(ImageContext);
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            if (sliderRef.current) {
-                sliderRef.current.slickGoTo(0); // reset to first
-                sliderRef.current.slickPause(); // if you want autoplay stable
-                //sliderRef.current.innerSlider.onWindowResized(); // trigger internal recalc
-            }
-        }, 2000);
-
-        return () => clearTimeout(timer);
-    }, []);
-    const settings = {
-        dots: false,
-        centerMode: true,
-        infinite: true,
-        speed: 10000,
-        autoplay: true,
-        autoplaySpeed: 0,
-        cssEase: "linear",
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        prevArrow: true,
-        nextArrow: true,
-    };
 
     const items = reviews
         .filter((review) => review?.includeInReviews === null)
-        .reverse()
         .map((r, i) => {
             const rawUrl = r.image?.url || null;
             const optimizedUrl = rawUrl ? getImageUrl(rawUrl, "large") : null;
 
             return {
                 src: optimizedUrl, // still needed for gallery to handle slide sizing
-                name: r.fullName || "",
-                strapline: r.Strapline.toUpperCase() || "",
-                alt: r.fullName || "",
+                name: r.fullName,
+                strapline: r.Strapline.toUpperCase() || null,
+                alt: r.fullName,
                 id: r.id,
                 key: i,
             };
@@ -55,43 +31,57 @@ const CustomGalleryHome = ({ reviews = [] }) => {
 
     if (!items || items.length === 0) return null;
 
-    //const cloudinaryUrl =
-    //"https://res.cloudinary.com/dbrcftp5l/image/upload/v1757251295/film_c9b0de7591.png";
-
-    //const bgUrl = getImageUrl(cloudinaryUrl, "large");
-
     return (
         <>
-            <div
-                className="galleryHomeContainer"
-                //</>style={{ // "--imageUrl": `url(${bgUrl})`,}}
-                alt="background"
-            >
-                <Slider
-                    initialSlide={0}
-                    key={reviews.length}
-                    {...settings}
+            <div className="galleryHomeContainer">
+                <Swiper
+                    modules={[Autoplay, Pagination, Navigation]}
+                    spaceBetween={20}
+                    slidesPerView={1}
+                    loop={true}
+                    autoplay={{ delay: 10, disableOnInteraction: false }}
+                    pagination={{ clickable: true }}
+                    navigation={true}
+                    speed={5000}
                     className="home-slider"
-                    ref={sliderRef}
                 >
-                    {items.map((item, idx) => (
-                        <div
-                            key={idx}
-                            className="home-slide"
-                            style={{ width: "100%" }}
-                        >
-                            <img
-                                src={item.src}
-                                alt={item.name}
-                                className="home-img"
-                            />
-                            <div className="home-strapline">
+                    {items.map((item, i) => (
+                        <SwiperSlide key={i}>
+                            <div
+                                className="home-slide"
+                                key={i}
+                                style={{
+                                    backgroundImage: `url(${item.src})`,
+                                    backgroundSize: "cover",
+                                    backgroundPosition: "center",
+                                    backgroundBlendMode: "soft-light",
+                                    filter: "opacity(0.6)",
+                                }}
+                            ></div>
+                            {item.links && (
+                                <button
+                                    className="review-btn"
+                                    target="_blank"
+                                    onClick={() => {
+                                        window.location.href = `${item.links.linkURL}`;
+                                    }}
+                                >
+                                    {item.links.name}
+                                </button>
+                            )}
+                            <div
+                                className="home-strapline"
+                                style={{ cursor: "pointer" }}
+                                onClick={() => {
+                                    Navigate(`/page/listen`);
+                                }}
+                            >
                                 {item.strapline}
                             </div>
                             <h3 className="home-name">{item.name}</h3>
-                        </div>
+                        </SwiperSlide>
                     ))}
-                </Slider>
+                </Swiper>
             </div>
         </>
     );
