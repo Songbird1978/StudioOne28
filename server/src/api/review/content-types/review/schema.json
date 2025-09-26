@@ -48,6 +48,9 @@
     },
     "Strapline": {
       "type": "string"
+    },
+    "straplineLink": {
+      "type": "string"
     }
   }
 }

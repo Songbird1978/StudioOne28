@@ -53,9 +53,9 @@ const CustomGalleryHome = ({ reviews = [] }) => {
                                 style={{
                                     backgroundImage: `url(${item.src})`,
                                     backgroundSize: "cover",
-                                    backgroundPosition: "center",
+                                    backgroundPosition: "center left",
                                     backgroundBlendMode: "soft-light",
-                                    filter: "opacity(0.6)",
+                                    filter: "opacity(0.8)",
                                 }}
                             ></div>
                             {item.links && (
