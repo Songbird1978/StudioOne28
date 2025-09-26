@@ -23,6 +23,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
                 src: optimizedUrl, // still needed for gallery to handle slide sizing
                 name: r.fullName,
                 strapline: r.Strapline.toUpperCase() || null,
+                straplineLink: r.straplineLink,
                 alt: r.fullName,
                 id: r.id,
                 key: i,
@@ -73,7 +74,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
                                 className="home-strapline"
                                 style={{ cursor: "pointer" }}
                                 onClick={() => {
-                                    Navigate(`/page/listen`);
+                                    Navigate(`/page${item.straplineLink}`);
                                 }}
                             >
                                 {item.strapline}
