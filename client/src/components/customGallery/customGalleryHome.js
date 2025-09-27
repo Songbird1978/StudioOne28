@@ -45,6 +45,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
                     navigation={true}
                     speed={5000}
                     className="home-slider"
+                    lazy={true}
                 >
                     {items.map((item, i) => (
                         <SwiperSlide key={i}>
