@@ -29,11 +29,11 @@
     background-color: var(--hover-bg);
     overflow: hidden;
     box-shadow: 2px 0px 2px 0px var(--eggplant);
-    width: 80vw;
+    width: 50vw;
 }
 
 .drawerNavOption {
-    width: 80vw;
+    width: 50vw;
     height: 10vh;
 }
 /* colour persists on main option whilst scrolling through menu */
