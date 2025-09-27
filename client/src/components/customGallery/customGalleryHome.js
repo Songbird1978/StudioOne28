@@ -40,7 +40,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
                     spaceBetween={20}
                     slidesPerView={1}
                     loop={true}
-                    autoplay={{ delay: 10, disableOnInteraction: false }}
+                    autoplay={{ delay: 10, disableOnInteraction: true }}
                     pagination={{ clickable: true }}
                     navigation={true}
                     speed={5000}
@@ -57,7 +57,7 @@ const CustomGalleryHome = ({ reviews = [] }) => {
                                     backgroundSize: "cover",
                                     backgroundPosition: "50% 40%",
                                     backgroundBlendMode: "soft-light",
-                                    filter: "opacity(0.8)",
+                                    filter: "opacity(0.5)",
                                 }}
                             ></div>
                             {item.links && (

@@ -6,11 +6,10 @@ import "./drawerMenu.css";
 import { motion } from "framer-motion";
 import Divider from "@mui/material/Divider";
 
-function DrawerOptions({ pages = [], handleDrawerClose }) {
+function DrawerOptions({ pages, handleDrawerClose }) {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const navigate = useNavigate();
-
     const dropdownVariants = {
         hidden: {
             opacity: 0,
@@ -49,7 +48,7 @@ function DrawerOptions({ pages = [], handleDrawerClose }) {
                     pages
                         .filter((page) => page?.showInNav)
                         .sort((a, b) => a.order - b.order)
-                        .map((page, array, index) => {
+                        .map((page) => {
                             const slug = page?.slug ?? "missing slug";
                             const title =
                                 page?.title?.toUpperCase() ?? "UNTITLED";
@@ -60,10 +59,10 @@ function DrawerOptions({ pages = [], handleDrawerClose }) {
                                 .sort((a, b) => a.order - b.order);
 
                             return (
-                                <React.Fragment key={slug}>
+                                <React.Fragment>
                                     <li
                                         className="drawerMenu-item drawerDropdown"
-                                        key={slug}
+                                        key={title}
                                         onMouseEnter={() => setMenuOpen(true)}
                                         onClick={() => setMenuOpen(true)}
                                         onMouseLeave={() => setMenuOpen(false)}
@@ -78,7 +77,7 @@ function DrawerOptions({ pages = [], handleDrawerClose }) {
                                                 "--hover-bg": page.bgcolor,
                                                 cursor: "pointer",
                                             }}
-                                            key={slug}
+                                            key={title}
                                             id={slug}
                                         >
                                             {title}
