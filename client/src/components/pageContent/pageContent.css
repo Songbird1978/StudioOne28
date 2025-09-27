@@ -128,18 +128,20 @@
     align-items: center;
     flex-direction: column;
     text-wrap: wrap;
+    text-align: center;
 }
 
 .td {
     padding: 10px;
     font-family: "FuturaBook";
-    font-size: 1.3rem;
+    font-size: 1rem;
     background-color: var(--pear);
     margin: 10px;
     flex-direction: column;
     width: 100%;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 .clientList {
@@ -171,7 +173,7 @@
     padding-left: 5%;
 }
 
-@media (max-width: 400px) {
+@media (min-width: 200px) {
     .pageSocialsContainer .navSocials {
         display: flex !important;
         flex-direction: auto;
@@ -188,12 +190,12 @@
     }
 }
 
-@media (max-width: 850px) {
+@media (min-width: 850px) {
     .tableBlock {
         flex-direction: column;
     }
     .td {
-        font-size: 1rem;
+        font-size: 1.3rem;
         text-align: center;
     }
 }
