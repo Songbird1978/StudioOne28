@@ -49,9 +49,8 @@
 
 .tableBlock {
     text-align: left;
-    table-layout: auto;
     padding-bottom: 2.5%;
-    overflow-x: scroll;
+    text-wrap: wrap;
 }
 
 .contentBlocks {
@@ -61,6 +60,7 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    text-wrap: wrap;
 }
 
 .buttonBlock {

@@ -8,15 +8,17 @@ import Drawer from "@mui/material/Drawer";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiAppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import Divider from "@mui/material/Divider";
+//import List from "@mui/material/List";
+//import ListItem from "@mui/material/ListItem";
+//import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./style.css";
 import "../../App.css";
 import "../../index.css";
 import NavOptions from "../navbar/navOptions.js";
+import DrawerOptions from "../navbar/drawerOptions.js";
+
 import Socials from "../socials/socials.js";
 //import background from "../../images/redCordCarpet.png";
 
@@ -212,8 +214,16 @@ function Navbar({ pages = [] }) {
                 >
                     STUDIO ONE28
                 </div>
-
-                {/* this is where the menus start */}
+                <DrawerOptions
+                    handleDrawerClose={handleDrawerClose}
+                    pages={pages}
+                    id="drawerOptions"
+                    style={{
+                        flexDirection: "column",
+                        display: "block",
+                    }}
+                />
+                {/* this is where the menus start 
                 <List
                     className="nav"
                     sx={{

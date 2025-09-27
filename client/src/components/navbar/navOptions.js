@@ -64,6 +64,7 @@ function NavOptions({ pages = [] }) {
                                         key={slug}
                                         onMouseEnter={() => setMenuOpen(true)}
                                         onMouseLeave={() => setMenuOpen(false)}
+                                        onClick={() => setMenuOpen(true)}
                                     >
                                         <div
                                             onClick={() => {

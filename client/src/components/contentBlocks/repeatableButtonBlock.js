@@ -21,7 +21,7 @@ export default function RepeatableButtonBlock({ buttons, page, pages = [] }) {
                             fontSize: "0.6rem",
                         }}
                         key={i}
-                        onClick={() => navigate(n.linkURL)}
+                        onClick={() => navigate(`${n.linkURL}`)}
                     >
                         {n.name.toUpperCase()}
                     </button>

@@ -1,0 +1,98 @@
+.drawerNav {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    font-size: 0.8rem;
+    list-style-type: none;
+    color: #dab49dff;
+    text-decoration: none;
+    font-family: "Futura";
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+}
+
+.drawerSubmenu {
+    position: relative;
+    left: 0;
+    top: 100%;
+    display: none;
+    z-index: 3000;
+}
+
+.drawerDropdown-submenu {
+    position: relative;
+    list-style: none;
+    text-decoration: none;
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--hover-bg);
+    overflow: hidden;
+    box-shadow: 2px 0px 2px 0px var(--eggplant);
+    width: 80vw;
+}
+
+.drawerNavOption {
+    width: 80vw;
+    height: 10vh;
+}
+/* colour persists on main option whilst scrolling through menu */
+.drawerMenu-item:hover > .drawerNavOption {
+    background-color: var(--hover-bg);
+    text-decoration: none;
+    color: #59353eff;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+a:hover {
+    font-weight: bold;
+    text-shadow: var(--classyBox);
+}
+
+.drawerDropdown-submenu:last-child {
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #59353eff;
+}
+
+ul {
+    padding-left: 0em;
+    margin-left: 0;
+}
+
+/* Use transform instead of position changes for animations */
+.drawerSubmenu {
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: all 250ms transform 0.6s, opacity 0.5s;
+    transition-delay: 0.6s;
+    pointer-events: none;
+    background-color: var(--hover-bg);
+}
+
+.drawerDropdown:hover .drawerSubmenu {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    background-color: var(--hover-bg);
+    display: block;
+}
+
+.drawerNavOption:active {
+    background-color: var(--hover-bg);
+}
+
+.drawerNavOption:hover {
+    background-color: var(--hover-bg);
+    text-decoration: none;
+    color: #59353eff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: var(--classyBox);
+    font-size: large;
+}

@@ -126,7 +126,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
+    text-wrap: wrap;
 }
 
 .td {
@@ -135,8 +136,7 @@
     font-size: 1.3rem;
     background-color: var(--pear);
     margin: 10px;
-    flex-direction: row;
-    text-wrap: nowrap;
+    flex-direction: column;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -186,19 +186,13 @@
         fill: var(--eggplant);
         width: 30px !important;
     }
-    .td {
-        flex-direction: column;
-        text-wrap: nowrap;
-    }
 }
 
 @media (max-width: 850px) {
     .tableBlock {
         flex-direction: column;
-        text-wrap: nowrap;
     }
     .td {
-        text-wrap: nowrap;
         font-size: 1rem;
         text-align: center;
     }
