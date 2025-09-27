@@ -75,6 +75,7 @@
     background-size: cover;
     z-index: 0;
     overscroll-behavior: none;
+    overflow-x: hidden;
 }
 
 .layoutContainer::before {
@@ -121,15 +122,24 @@
     background-color: rgb(243, 233, 220, 80%);
 }
 
-th,
-td {
-    padding: 10px;
-    font-family: "FuturaBook";
+.tableBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
 }
 
-th {
+.td {
+    padding: 10px;
+    font-family: "FuturaBook";
+    font-size: 1.3rem;
     background-color: var(--pear);
-    font-family: "BigShouldersBold";
+    margin: 10px;
+    flex-direction: row;
+    text-wrap: nowrap;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .clientList {
@@ -175,5 +185,21 @@ th {
         height: 30px !important;
         fill: var(--eggplant);
         width: 30px !important;
+    }
+    .td {
+        flex-direction: column;
+        text-wrap: nowrap;
+    }
+}
+
+@media (max-width: 850px) {
+    .tableBlock {
+        flex-direction: column;
+        text-wrap: nowrap;
+    }
+    .td {
+        text-wrap: nowrap;
+        font-size: 1rem;
+        text-align: center;
     }
 }

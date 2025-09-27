@@ -51,6 +51,7 @@
     text-align: left;
     table-layout: auto;
     padding-bottom: 2.5%;
+    overflow-x: scroll;
 }
 
 .contentBlocks {

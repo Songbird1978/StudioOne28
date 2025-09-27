@@ -21,21 +21,19 @@ export default function TableBlock({ table }) {
     if (!tableHeaders.length || !tableRows.length) return null;
 
     return (
-        <div style={{ overflowX: "auto", width: "100%" }}>
-            <table className="tableBlock" style={{ width: "100%" }}>
-                <tbody>
-                    <tr>
-                        {tableHeaders.map((header, i) => (
-                            <th key={i}>{header.tableheader}</th>
-                        ))}
-                    </tr>
-                    <tr>
-                        {tableRows.map((row, i) => (
-                            <td key={i}>{row.tableDataCell}</td>
-                        ))}
-                    </tr>
-                </tbody>
-            </table>
+        <div
+            className="tableBlock"
+            style={{
+                overflowX: "none",
+                width: "100%",
+                display: "flex",
+            }}
+        >
+            {tableRows.map((row, i) => (
+                <div className="td" key={i}>
+                    {row.tableDataCell}
+                </div>
+            ))}
         </div>
     );
 }

@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     height: calc(100vh - 15vh -10vh);
-    background-color: var(--velvet-mistake);
+    background-color: var(--linen);
     background-blend-mode: soft-light;
 }
 
